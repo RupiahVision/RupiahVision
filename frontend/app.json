@@ -2,22 +2,34 @@
   "expo": {
     "name": "RupiahVision",
     "slug": "rupiahvision",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "splash": {
       "resizeMode": "contain",
       "backgroundColor": "#f6f4ef"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.github.rupiahvision"
     },
     "android": {
-      "permissions": ["CAMERA", "READ_MEDIA_IMAGES"]
+      "permissions": [
+        "CAMERA",
+        "READ_MEDIA_IMAGES",
+        "CAMERA",
+        "READ_MEDIA_IMAGES"
+      ],
+      "package": "com.github.rupiahvision"
     },
     "web": {
       "bundler": "metro"
-    }
+    },
+    "plugins": [
+      "expo-asset"
+    ]
   }
 }

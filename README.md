@@ -25,9 +25,12 @@ Backend saat ini memakai classifier demo agar proyek bisa langsung berjalan tanp
 ```bash
 cd backend
 python -m venv .venv
-.venv\Scripts\activate
+.venv\Scripts\activate (Windowns)
+source .venv/bin/activate (MacBook)
 pip install -r requirements.txt
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload (jika tidak bisa gunakan python app/main.py)
+python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
 ```
 
 Cek API:
@@ -36,11 +39,17 @@ Cek API:
 curl http://localhost:8000/health
 ```
 
+Outputnya akan menghasilkan:
+```
+{"status":"ok"}
+```
+
 ## Menjalankan Frontend
 
 ```bash
 cd frontend
 npm install
+npx expo install expo-asset
 npm start
 ```
 
