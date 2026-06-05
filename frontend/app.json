@@ -14,7 +14,10 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.github.rupiahvision"
+      "bundleIdentifier": "com.github.rupiahvision",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "permissions": [
@@ -31,6 +34,11 @@
     "plugins": [
       "expo-asset",
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "703cec44-a808-4035-87a9-fcaedfc6f808"
+      }
+    }
   }
 }
