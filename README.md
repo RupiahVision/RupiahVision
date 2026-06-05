@@ -18,7 +18,7 @@ Label nominal yang digunakan backend:
 - `1000`
 - `bukanuang`
 
-Backend saat ini memakai classifier demo agar proyek bisa langsung berjalan tanpa dataset. Untuk hasil deteksi nominal yang akurat, ganti logic di `backend/app/ml/classifier.py` dengan model TensorFlow/PyTorch/TFLite yang sudah dilatih menggunakan dataset uang kertas Rupiah.
+Backend memakai model TFLite `backend/models/rupiahvision_mobilenet2_float32.tflite` untuk mendeteksi nominal uang kertas Rupiah.
 
 ## Menjalankan Backend
 
@@ -59,18 +59,52 @@ Di perangkat fisik, gunakan URL IP komputer untuk backend, contoh:
 http://192.168.1.10:8000
 ```
 
+Catatan: default Android `http://10.0.2.2:8000` hanya berlaku untuk emulator. Jika APK sudah diinstall di HP fisik, isi kolom Backend API dengan IP komputer/server backend yang bisa dijangkau HP dan pastikan HP berada di jaringan yang sama.
+
 Untuk emulator Android biasanya bisa memakai:
 
 ```text
 http://10.0.2.2:8000
 ```
 
-## Mengganti ke Model ML Sungguhan
+## Membuat APK Release
 
-1. Latih model klasifikasi nominal uang kertas Rupiah dengan label `100000`, `50000`, `20000`, `10000`, `5000`, `2000`, `1000`, dan `bukanuang`.
-2. Simpan model ke folder backend, misalnya `backend/models/model.tflite` atau `backend/models/model.keras`.
-3. Ubah `backend/app/ml/classifier.py` pada fungsi `predict_image`.
-4. Pastikan response tetap berbentuk:
+Metode build APK yang sudah berhasil disimpan sebagai script:
+
+```bash
+cd frontend
+npm run build:apk
+```
+
+Output default akan dibuat di:
+
+```text
+RupiahVision-release-arm64-v8a.apk
+```
+
+Script `frontend/scripts/build-release-apk.ps1` otomatis menyiapkan kebutuhan build yang sebelumnya menyebabkan error, yaitu:
+
+- memakai JDK 17 portable dari folder `work/jdk` atau fallback `work/apk-build-tools`;
+- memakai Node.js 20 portable dari folder `work/node20` atau fallback `work/apk-build-tools`;
+- memakai Android SDK command-line tools terbaru;
+- menerima Android SDK licenses;
+- menjalankan `expo prebuild` jika folder `frontend/android` belum ada;
+- menerapkan patch kompatibilitas Kotlin dan native Expo;
+- memakai drive pendek sementara, default `R:`, untuk menghindari masalah path panjang Windows;
+- membatasi worker dan memory Gradle/CMake agar build tidak mudah gagal karena kehabisan memory;
+- membuat APK khusus arsitektur `arm64-v8a`.
+
+APK yang dibuat cocok untuk uji coba/manual install di Android. Untuk rilis produksi di Play Store, gunakan konfigurasi signing key release milik sendiri.
+
+## Model ML
+
+Model utama disimpan di:
+
+```text
+backend/models/rupiahvision_mobilenet2_float32.tflite
+```
+
+Backend membaca model tersebut lewat `backend/app/ml/classifier.py`. Response tetap berbentuk:
 
 ```json
 {
