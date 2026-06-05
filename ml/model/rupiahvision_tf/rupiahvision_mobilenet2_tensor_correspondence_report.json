@@ -1,0 +1,4888 @@
+{
+  "schema_version": 1,
+  "summary": {
+    "total_onnx_node_outputs": 100,
+    "direct_count": 4,
+    "rewritten_count": 94,
+    "inferred_count": 0,
+    "missing_count": 2,
+    "rewritten_but_missing_count": 0,
+    "lineage_event_count": 199
+  },
+  "lineage_events": [
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "input_onnx_ncx_internal",
+        "input_onnx_ncx_internal_perm",
+        "features.0.0.weight",
+        "features.0.0.weight_bias",
+        "min_val_cast",
+        "max_val_cast",
+        "features.1.conv.0.0.weight",
+        "features.1.conv.0.0.weight_bias",
+        "features.1.conv.1.weight",
+        "features.1.conv.1.weight_bias",
+        "features.2.conv.0.0.weight",
+        "features.2.conv.0.0.weight_bias",
+        "features.2.conv.1.0.weight",
+        "features.2.conv.1.0.weight_bias",
+        "features.2.conv.2.weight",
+        "features.2.conv.2.weight_bias",
+        "features.3.conv.0.0.weight",
+        "features.3.conv.0.0.weight_bias",
+        "features.3.conv.1.0.weight",
+        "features.3.conv.1.0.weight_bias",
+        "features.3.conv.2.weight",
+        "features.3.conv.2.weight_bias",
+        "features.4.conv.0.0.weight",
+        "features.4.conv.0.0.weight_bias",
+        "features.4.conv.1.0.weight",
+        "features.4.conv.1.0.weight_bias",
+        "features.4.conv.2.weight",
+        "features.4.conv.2.weight_bias",
+        "features.5.conv.0.0.weight",
+        "features.5.conv.0.0.weight_bias",
+        "features.5.conv.1.0.weight",
+        "features.5.conv.1.0.weight_bias",
+        "features.5.conv.2.weight",
+        "features.5.conv.2.weight_bias",
+        "features.6.conv.0.0.weight",
+        "features.6.conv.0.0.weight_bias",
+        "features.6.conv.1.0.weight",
+        "features.6.conv.1.0.weight_bias",
+        "features.6.conv.2.weight",
+        "features.6.conv.2.weight_bias",
+        "features.7.conv.0.0.weight",
+        "features.7.conv.0.0.weight_bias",
+        "features.7.conv.1.0.weight",
+        "features.7.conv.1.0.weight_bias",
+        "features.7.conv.2.weight",
+        "features.7.conv.2.weight_bias",
+        "features.8.conv.0.0.weight",
+        "features.8.conv.0.0.weight_bias",
+        "features.8.conv.1.0.weight",
+        "features.8.conv.1.0.weight_bias",
+        "features.8.conv.2.weight",
+        "features.8.conv.2.weight_bias",
+        "features.9.conv.0.0.weight",
+        "features.9.conv.0.0.weight_bias",
+        "features.9.conv.1.0.weight",
+        "features.9.conv.1.0.weight_bias",
+        "features.9.conv.2.weight",
+        "features.9.conv.2.weight_bias",
+        "features.10.conv.0.0.weight",
+        "features.10.conv.0.0.weight_bias",
+        "features.10.conv.1.0.weight",
+        "features.10.conv.1.0.weight_bias",
+        "features.10.conv.2.weight",
+        "features.10.conv.2.weight_bias",
+        "features.11.conv.0.0.weight",
+        "features.11.conv.0.0.weight_bias",
+        "features.11.conv.1.0.weight",
+        "features.11.conv.1.0.weight_bias",
+        "features.11.conv.2.weight",
+        "features.11.conv.2.weight_bias",
+        "features.12.conv.0.0.weight",
+        "features.12.conv.0.0.weight_bias",
+        "features.12.conv.1.0.weight",
+        "features.12.conv.1.0.weight_bias",
+        "features.12.conv.2.weight",
+        "features.12.conv.2.weight_bias",
+        "features.13.conv.0.0.weight",
+        "features.13.conv.0.0.weight_bias",
+        "features.13.conv.1.0.weight",
+        "features.13.conv.1.0.weight_bias",
+        "features.13.conv.2.weight",
+        "features.13.conv.2.weight_bias",
+        "features.14.conv.0.0.weight",
+        "features.14.conv.0.0.weight_bias",
+        "features.14.conv.1.0.weight",
+        "features.14.conv.1.0.weight_bias",
+        "features.14.conv.2.weight",
+        "features.14.conv.2.weight_bias",
+        "features.15.conv.0.0.weight",
+        "features.15.conv.0.0.weight_bias",
+        "features.15.conv.1.0.weight",
+        "features.15.conv.1.0.weight_bias",
+        "features.15.conv.2.weight",
+        "features.15.conv.2.weight_bias",
+        "features.16.conv.0.0.weight",
+        "features.16.conv.0.0.weight_bias",
+        "features.16.conv.1.0.weight",
+        "features.16.conv.1.0.weight_bias",
+        "features.16.conv.2.weight",
+        "features.16.conv.2.weight_bias",
+        "features.17.conv.0.0.weight",
+        "features.17.conv.0.0.weight_bias",
+        "features.17.conv.1.0.weight",
+        "features.17.conv.1.0.weight_bias",
+        "features.17.conv.2.weight",
+        "features.17.conv.2.weight_bias",
+        "features.18.0.weight",
+        "features.18.0.weight_bias",
+        "val_577",
+        "val_581",
+        "classifier.1.weight",
+        "classifier.1.bias",
+        "node_Conv_809_input_nhwc",
+        "getitem_6",
+        "getitem_6_perm",
+        "node_Conv_815_input_nhwc",
+        "node_Conv_821_input_nhwc",
+        "node_Conv_833_input_nhwc",
+        "node_Conv_851_input_nhwc",
+        "node_Conv_875_input_nhwc",
+        "node_Conv_893_input_nhwc",
+        "getitem_150",
+        "getitem_150_perm",
+        "node_Conv_911_input_nhwc"
+      ],
+      "event_index": 0
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 1
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_15",
+      "dst_name": "node_Conv_819_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 2
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_24",
+      "dst_name": "node_Conv_825_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 3
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add",
+      "new_name": "node_Conv_827_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 4
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_33",
+      "dst_name": "node_Conv_831_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 5
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_42",
+      "dst_name": "node_Conv_837_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 6
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_1",
+      "new_name": "node_Conv_839_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 7
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_1",
+      "dst_name": "node_Conv_839_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 8
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_839_input_nhwc",
+      "new_name": "add_1",
+      "source": "set_operator_outputs",
+      "event_index": 9
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_1",
+      "dst_name": "node_Conv_839_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 10
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_51",
+      "dst_name": "node_Conv_843_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 11
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_2",
+      "new_name": "node_Conv_845_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 12
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_60",
+      "dst_name": "node_Conv_849_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 13
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_69",
+      "dst_name": "node_Conv_855_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 14
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_3",
+      "new_name": "node_Conv_857_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 15
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_3",
+      "dst_name": "node_Conv_857_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 16
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_857_input_nhwc",
+      "new_name": "add_3",
+      "source": "set_operator_outputs",
+      "event_index": 17
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_3",
+      "dst_name": "node_Conv_857_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 18
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_78",
+      "dst_name": "node_Conv_861_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 19
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_4",
+      "new_name": "node_Conv_863_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 20
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_4",
+      "dst_name": "node_Conv_863_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 21
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_863_input_nhwc",
+      "new_name": "add_4",
+      "source": "set_operator_outputs",
+      "event_index": 22
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_4",
+      "dst_name": "node_Conv_863_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 23
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_87",
+      "dst_name": "node_Conv_867_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 24
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_5",
+      "new_name": "node_Conv_869_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 25
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_96",
+      "dst_name": "node_Conv_873_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 26
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_105",
+      "dst_name": "node_Conv_879_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 27
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_6",
+      "new_name": "node_Conv_881_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 28
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_6",
+      "dst_name": "node_Conv_881_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 29
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_881_input_nhwc",
+      "new_name": "add_6",
+      "source": "set_operator_outputs",
+      "event_index": 30
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_6",
+      "dst_name": "node_Conv_881_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 31
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_114",
+      "dst_name": "node_Conv_885_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 32
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_7",
+      "new_name": "node_Conv_887_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 33
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_123",
+      "dst_name": "node_Conv_891_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 34
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_132",
+      "dst_name": "node_Conv_897_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 35
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_8",
+      "new_name": "node_Conv_899_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 36
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_8",
+      "dst_name": "node_Conv_899_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 37
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_899_input_nhwc",
+      "new_name": "add_8",
+      "source": "set_operator_outputs",
+      "event_index": 38
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "add_8",
+      "dst_name": "node_Conv_899_input_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 39
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_141",
+      "dst_name": "node_Conv_903_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 40
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "add_9",
+      "new_name": "node_Conv_905_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 41
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "getitem_15",
+        "getitem_15_perm",
+        "getitem_24",
+        "getitem_24_perm",
+        "add",
+        "node_Conv_827_input_nhwc_perm",
+        "getitem_33",
+        "getitem_33_perm",
+        "getitem_42",
+        "getitem_42_perm",
+        "add_1",
+        "node_Conv_839_input_nhwc_perm",
+        "getitem_51",
+        "getitem_51_perm",
+        "add_2",
+        "node_Conv_845_input_nhwc_perm",
+        "getitem_60",
+        "getitem_60_perm",
+        "getitem_69",
+        "getitem_69_perm",
+        "add_3",
+        "node_Conv_857_input_nhwc_perm",
+        "getitem_78",
+        "getitem_78_perm",
+        "add_4",
+        "node_Conv_863_input_nhwc_perm",
+        "getitem_87",
+        "getitem_87_perm",
+        "add_5",
+        "node_Conv_869_input_nhwc_perm",
+        "getitem_96",
+        "getitem_96_perm",
+        "getitem_105",
+        "getitem_105_perm",
+        "add_6",
+        "node_Conv_881_input_nhwc_perm",
+        "getitem_114",
+        "getitem_114_perm",
+        "add_7",
+        "node_Conv_887_input_nhwc_perm",
+        "getitem_123",
+        "getitem_123_perm",
+        "getitem_132",
+        "getitem_132_perm",
+        "add_8",
+        "node_Conv_899_input_nhwc_perm",
+        "getitem_141",
+        "getitem_141_perm",
+        "add_9",
+        "node_Conv_905_input_nhwc_perm"
+      ],
+      "event_index": 42
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_153",
+      "dst_name": "node_Conv_911_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 43
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "getitem_153",
+        "getitem_153_perm"
+      ],
+      "event_index": 44
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 45
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem",
+      "dst_name": "node_Conv_809_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 46
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh",
+      "new_name": "node_Conv_811_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 47
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_3",
+      "dst_name": "node_Conv_811_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 48
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_1",
+      "new_name": "node_Conv_813_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 49
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_9",
+      "dst_name": "node_Conv_815_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 50
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_2",
+      "new_name": "node_Conv_817_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 51
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_12",
+      "dst_name": "node_Conv_817_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 52
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_3",
+      "new_name": "node_Conv_819_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 53
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_18",
+      "dst_name": "node_Conv_821_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 54
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_4",
+      "new_name": "node_Conv_823_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 55
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_21",
+      "dst_name": "node_Conv_823_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 56
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_5",
+      "new_name": "node_Conv_825_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 57
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_27",
+      "dst_name": "node_Conv_827_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 58
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_6",
+      "new_name": "node_Conv_829_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 59
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_30",
+      "dst_name": "node_Conv_829_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 60
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_7",
+      "new_name": "node_Conv_831_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 61
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_36",
+      "dst_name": "node_Conv_833_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 62
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_8",
+      "new_name": "node_Conv_835_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 63
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_39",
+      "dst_name": "node_Conv_835_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 64
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_9",
+      "new_name": "node_Conv_837_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 65
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_45",
+      "dst_name": "node_Conv_839_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 66
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_10",
+      "new_name": "node_Conv_841_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 67
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_48",
+      "dst_name": "node_Conv_841_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 68
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_11",
+      "new_name": "node_Conv_843_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 69
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_54",
+      "dst_name": "node_Conv_845_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 70
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_12",
+      "new_name": "node_Conv_847_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 71
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_57",
+      "dst_name": "node_Conv_847_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 72
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_13",
+      "new_name": "node_Conv_849_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 73
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_63",
+      "dst_name": "node_Conv_851_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 74
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_14",
+      "new_name": "node_Conv_853_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 75
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_66",
+      "dst_name": "node_Conv_853_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 76
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_15",
+      "new_name": "node_Conv_855_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 77
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_72",
+      "dst_name": "node_Conv_857_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 78
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_16",
+      "new_name": "node_Conv_859_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 79
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_75",
+      "dst_name": "node_Conv_859_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 80
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_17",
+      "new_name": "node_Conv_861_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 81
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_81",
+      "dst_name": "node_Conv_863_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 82
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_18",
+      "new_name": "node_Conv_865_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 83
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_84",
+      "dst_name": "node_Conv_865_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 84
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_19",
+      "new_name": "node_Conv_867_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 85
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_90",
+      "dst_name": "node_Conv_869_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 86
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_20",
+      "new_name": "node_Conv_871_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 87
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_93",
+      "dst_name": "node_Conv_871_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 88
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_21",
+      "new_name": "node_Conv_873_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 89
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_99",
+      "dst_name": "node_Conv_875_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 90
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_22",
+      "new_name": "node_Conv_877_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 91
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_102",
+      "dst_name": "node_Conv_877_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 92
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_23",
+      "new_name": "node_Conv_879_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 93
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_108",
+      "dst_name": "node_Conv_881_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 94
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_24",
+      "new_name": "node_Conv_883_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 95
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_111",
+      "dst_name": "node_Conv_883_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 96
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_25",
+      "new_name": "node_Conv_885_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 97
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_117",
+      "dst_name": "node_Conv_887_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 98
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_26",
+      "new_name": "node_Conv_889_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 99
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_120",
+      "dst_name": "node_Conv_889_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 100
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_27",
+      "new_name": "node_Conv_891_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 101
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_126",
+      "dst_name": "node_Conv_893_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 102
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_28",
+      "new_name": "node_Conv_895_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 103
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_129",
+      "dst_name": "node_Conv_895_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 104
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_29",
+      "new_name": "node_Conv_897_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 105
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_135",
+      "dst_name": "node_Conv_899_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 106
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_30",
+      "new_name": "node_Conv_901_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 107
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_138",
+      "dst_name": "node_Conv_901_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 108
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_31",
+      "new_name": "node_Conv_903_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 109
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_144",
+      "dst_name": "node_Conv_905_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 110
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_32",
+      "new_name": "node_Conv_907_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 111
+    },
+    {
+      "kind": "replace_input",
+      "src_name": "getitem_147",
+      "dst_name": "node_Conv_907_output_nhwc",
+      "source": "set_operator_inputs",
+      "event_index": 112
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "hardtanh_33",
+      "new_name": "node_Conv_909_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 113
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "getitem",
+        "getitem_perm",
+        "hardtanh",
+        "getitem_3",
+        "node_Conv_811_input_nhwc_perm",
+        "getitem_3_perm",
+        "hardtanh_1",
+        "node_Conv_813_input_nhwc_perm",
+        "getitem_9",
+        "getitem_9_perm",
+        "hardtanh_2",
+        "getitem_12",
+        "node_Conv_817_input_nhwc_perm",
+        "getitem_12_perm",
+        "hardtanh_3",
+        "node_Conv_819_input_nhwc_perm",
+        "getitem_18",
+        "getitem_18_perm",
+        "hardtanh_4",
+        "getitem_21",
+        "node_Conv_823_input_nhwc_perm",
+        "getitem_21_perm",
+        "hardtanh_5",
+        "node_Conv_825_input_nhwc_perm",
+        "getitem_27",
+        "getitem_27_perm",
+        "hardtanh_6",
+        "getitem_30",
+        "node_Conv_829_input_nhwc_perm",
+        "getitem_30_perm",
+        "hardtanh_7",
+        "node_Conv_831_input_nhwc_perm",
+        "getitem_36",
+        "getitem_36_perm",
+        "hardtanh_8",
+        "getitem_39",
+        "node_Conv_835_input_nhwc_perm",
+        "getitem_39_perm",
+        "hardtanh_9",
+        "node_Conv_837_input_nhwc_perm",
+        "getitem_45",
+        "getitem_45_perm",
+        "hardtanh_10",
+        "getitem_48",
+        "node_Conv_841_input_nhwc_perm",
+        "getitem_48_perm",
+        "hardtanh_11",
+        "node_Conv_843_input_nhwc_perm",
+        "getitem_54",
+        "getitem_54_perm",
+        "hardtanh_12",
+        "getitem_57",
+        "node_Conv_847_input_nhwc_perm",
+        "getitem_57_perm",
+        "hardtanh_13",
+        "node_Conv_849_input_nhwc_perm",
+        "getitem_63",
+        "getitem_63_perm",
+        "hardtanh_14",
+        "getitem_66",
+        "node_Conv_853_input_nhwc_perm",
+        "getitem_66_perm",
+        "hardtanh_15",
+        "node_Conv_855_input_nhwc_perm",
+        "getitem_72",
+        "getitem_72_perm",
+        "hardtanh_16",
+        "getitem_75",
+        "node_Conv_859_input_nhwc_perm",
+        "getitem_75_perm",
+        "hardtanh_17",
+        "node_Conv_861_input_nhwc_perm",
+        "getitem_81",
+        "getitem_81_perm",
+        "hardtanh_18",
+        "getitem_84",
+        "node_Conv_865_input_nhwc_perm",
+        "getitem_84_perm",
+        "hardtanh_19",
+        "node_Conv_867_input_nhwc_perm",
+        "getitem_90",
+        "getitem_90_perm",
+        "hardtanh_20",
+        "getitem_93",
+        "node_Conv_871_input_nhwc_perm",
+        "getitem_93_perm",
+        "hardtanh_21",
+        "node_Conv_873_input_nhwc_perm",
+        "getitem_99",
+        "getitem_99_perm",
+        "hardtanh_22",
+        "getitem_102",
+        "node_Conv_877_input_nhwc_perm",
+        "getitem_102_perm",
+        "hardtanh_23",
+        "node_Conv_879_input_nhwc_perm",
+        "getitem_108",
+        "getitem_108_perm",
+        "hardtanh_24",
+        "getitem_111",
+        "node_Conv_883_input_nhwc_perm",
+        "getitem_111_perm",
+        "hardtanh_25",
+        "node_Conv_885_input_nhwc_perm",
+        "getitem_117",
+        "getitem_117_perm",
+        "hardtanh_26",
+        "getitem_120",
+        "node_Conv_889_input_nhwc_perm",
+        "getitem_120_perm",
+        "hardtanh_27",
+        "node_Conv_891_input_nhwc_perm",
+        "getitem_126",
+        "getitem_126_perm",
+        "hardtanh_28",
+        "getitem_129",
+        "node_Conv_895_input_nhwc_perm",
+        "getitem_129_perm",
+        "hardtanh_29",
+        "node_Conv_897_input_nhwc_perm",
+        "getitem_135",
+        "getitem_135_perm",
+        "hardtanh_30",
+        "getitem_138",
+        "node_Conv_901_input_nhwc_perm",
+        "getitem_138_perm",
+        "hardtanh_31",
+        "node_Conv_903_input_nhwc_perm",
+        "getitem_144",
+        "getitem_144_perm",
+        "hardtanh_32",
+        "getitem_147",
+        "node_Conv_907_input_nhwc_perm",
+        "getitem_147_perm",
+        "hardtanh_33",
+        "node_Conv_909_input_nhwc_perm"
+      ],
+      "event_index": 114
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 115
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 116
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 117
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 118
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 119
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 120
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_809_output_nhwc",
+      "new_name": "node_Conv_811_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 121
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_809_output_nhwc",
+      "fused_output": "node_Conv_811_input_nhwc",
+      "event_index": 122
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_811_output_nhwc",
+      "new_name": "node_Conv_813_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 123
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_811_output_nhwc",
+      "fused_output": "node_Conv_813_input_nhwc",
+      "event_index": 124
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_815_output_nhwc",
+      "new_name": "node_Conv_817_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 125
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_815_output_nhwc",
+      "fused_output": "node_Conv_817_input_nhwc",
+      "event_index": 126
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_817_output_nhwc",
+      "new_name": "node_Conv_819_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 127
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_817_output_nhwc",
+      "fused_output": "node_Conv_819_input_nhwc",
+      "event_index": 128
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_821_output_nhwc",
+      "new_name": "node_Conv_823_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 129
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_821_output_nhwc",
+      "fused_output": "node_Conv_823_input_nhwc",
+      "event_index": 130
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_823_output_nhwc",
+      "new_name": "node_Conv_825_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 131
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_823_output_nhwc",
+      "fused_output": "node_Conv_825_input_nhwc",
+      "event_index": 132
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_827_output_nhwc",
+      "new_name": "node_Conv_829_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 133
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_827_output_nhwc",
+      "fused_output": "node_Conv_829_input_nhwc",
+      "event_index": 134
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_829_output_nhwc",
+      "new_name": "node_Conv_831_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 135
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_829_output_nhwc",
+      "fused_output": "node_Conv_831_input_nhwc",
+      "event_index": 136
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_833_output_nhwc",
+      "new_name": "node_Conv_835_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 137
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_833_output_nhwc",
+      "fused_output": "node_Conv_835_input_nhwc",
+      "event_index": 138
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_835_output_nhwc",
+      "new_name": "node_Conv_837_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 139
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_835_output_nhwc",
+      "fused_output": "node_Conv_837_input_nhwc",
+      "event_index": 140
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_839_output_nhwc",
+      "new_name": "node_Conv_841_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 141
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_839_output_nhwc",
+      "fused_output": "node_Conv_841_input_nhwc",
+      "event_index": 142
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_841_output_nhwc",
+      "new_name": "node_Conv_843_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 143
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_841_output_nhwc",
+      "fused_output": "node_Conv_843_input_nhwc",
+      "event_index": 144
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_845_output_nhwc",
+      "new_name": "node_Conv_847_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 145
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_845_output_nhwc",
+      "fused_output": "node_Conv_847_input_nhwc",
+      "event_index": 146
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_847_output_nhwc",
+      "new_name": "node_Conv_849_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 147
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_847_output_nhwc",
+      "fused_output": "node_Conv_849_input_nhwc",
+      "event_index": 148
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_851_output_nhwc",
+      "new_name": "node_Conv_853_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 149
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_851_output_nhwc",
+      "fused_output": "node_Conv_853_input_nhwc",
+      "event_index": 150
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_853_output_nhwc",
+      "new_name": "node_Conv_855_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 151
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_853_output_nhwc",
+      "fused_output": "node_Conv_855_input_nhwc",
+      "event_index": 152
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_857_output_nhwc",
+      "new_name": "node_Conv_859_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 153
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_857_output_nhwc",
+      "fused_output": "node_Conv_859_input_nhwc",
+      "event_index": 154
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_859_output_nhwc",
+      "new_name": "node_Conv_861_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 155
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_859_output_nhwc",
+      "fused_output": "node_Conv_861_input_nhwc",
+      "event_index": 156
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_863_output_nhwc",
+      "new_name": "node_Conv_865_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 157
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_863_output_nhwc",
+      "fused_output": "node_Conv_865_input_nhwc",
+      "event_index": 158
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_865_output_nhwc",
+      "new_name": "node_Conv_867_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 159
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_865_output_nhwc",
+      "fused_output": "node_Conv_867_input_nhwc",
+      "event_index": 160
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_869_output_nhwc",
+      "new_name": "node_Conv_871_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 161
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_869_output_nhwc",
+      "fused_output": "node_Conv_871_input_nhwc",
+      "event_index": 162
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_871_output_nhwc",
+      "new_name": "node_Conv_873_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 163
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_871_output_nhwc",
+      "fused_output": "node_Conv_873_input_nhwc",
+      "event_index": 164
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_875_output_nhwc",
+      "new_name": "node_Conv_877_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 165
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_875_output_nhwc",
+      "fused_output": "node_Conv_877_input_nhwc",
+      "event_index": 166
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_877_output_nhwc",
+      "new_name": "node_Conv_879_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 167
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_877_output_nhwc",
+      "fused_output": "node_Conv_879_input_nhwc",
+      "event_index": 168
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_881_output_nhwc",
+      "new_name": "node_Conv_883_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 169
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_881_output_nhwc",
+      "fused_output": "node_Conv_883_input_nhwc",
+      "event_index": 170
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_883_output_nhwc",
+      "new_name": "node_Conv_885_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 171
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_883_output_nhwc",
+      "fused_output": "node_Conv_885_input_nhwc",
+      "event_index": 172
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_887_output_nhwc",
+      "new_name": "node_Conv_889_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 173
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_887_output_nhwc",
+      "fused_output": "node_Conv_889_input_nhwc",
+      "event_index": 174
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_889_output_nhwc",
+      "new_name": "node_Conv_891_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 175
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_889_output_nhwc",
+      "fused_output": "node_Conv_891_input_nhwc",
+      "event_index": 176
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_893_output_nhwc",
+      "new_name": "node_Conv_895_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 177
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_893_output_nhwc",
+      "fused_output": "node_Conv_895_input_nhwc",
+      "event_index": 178
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_895_output_nhwc",
+      "new_name": "node_Conv_897_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 179
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_895_output_nhwc",
+      "fused_output": "node_Conv_897_input_nhwc",
+      "event_index": 180
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_899_output_nhwc",
+      "new_name": "node_Conv_901_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 181
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_899_output_nhwc",
+      "fused_output": "node_Conv_901_input_nhwc",
+      "event_index": 182
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_901_output_nhwc",
+      "new_name": "node_Conv_903_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 183
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_901_output_nhwc",
+      "fused_output": "node_Conv_903_input_nhwc",
+      "event_index": 184
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_905_output_nhwc",
+      "new_name": "node_Conv_907_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 185
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_905_output_nhwc",
+      "fused_output": "node_Conv_907_input_nhwc",
+      "event_index": 186
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_907_output_nhwc",
+      "new_name": "node_Conv_909_input_nhwc",
+      "source": "set_operator_outputs",
+      "event_index": 187
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "DEPTHWISE_CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_907_output_nhwc",
+      "fused_output": "node_Conv_909_input_nhwc",
+      "event_index": 188
+    },
+    {
+      "kind": "rename_tensor",
+      "old_name": "node_Conv_911_output_nhwc",
+      "new_name": "hardtanh_34",
+      "source": "set_operator_outputs",
+      "event_index": 189
+    },
+    {
+      "kind": "fuse_conv_activation",
+      "conv_op_type": "CONV_2D",
+      "activation_op_type": "RELU6",
+      "fused_activation": "RELU6",
+      "conv_output": "node_Conv_911_output_nhwc",
+      "fused_output": "hardtanh_34",
+      "event_index": 190
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "node_Conv_809_output_nhwc",
+        "node_Conv_811_output_nhwc",
+        "node_Conv_815_output_nhwc",
+        "node_Conv_817_output_nhwc",
+        "node_Conv_821_output_nhwc",
+        "node_Conv_823_output_nhwc",
+        "node_Conv_827_output_nhwc",
+        "node_Conv_829_output_nhwc",
+        "node_Conv_833_output_nhwc",
+        "node_Conv_835_output_nhwc",
+        "node_Conv_839_output_nhwc",
+        "node_Conv_841_output_nhwc",
+        "node_Conv_845_output_nhwc",
+        "node_Conv_847_output_nhwc",
+        "node_Conv_851_output_nhwc",
+        "node_Conv_853_output_nhwc",
+        "node_Conv_857_output_nhwc",
+        "node_Conv_859_output_nhwc",
+        "node_Conv_863_output_nhwc",
+        "node_Conv_865_output_nhwc",
+        "node_Conv_869_output_nhwc",
+        "node_Conv_871_output_nhwc",
+        "node_Conv_875_output_nhwc",
+        "node_Conv_877_output_nhwc",
+        "node_Conv_881_output_nhwc",
+        "node_Conv_883_output_nhwc",
+        "node_Conv_887_output_nhwc",
+        "node_Conv_889_output_nhwc",
+        "node_Conv_893_output_nhwc",
+        "node_Conv_895_output_nhwc",
+        "node_Conv_899_output_nhwc",
+        "node_Conv_901_output_nhwc",
+        "node_Conv_905_output_nhwc",
+        "node_Conv_907_output_nhwc",
+        "node_Conv_911_output_nhwc"
+      ],
+      "event_index": 191
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 192
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 193
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 194
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 195
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 196
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 197
+    },
+    {
+      "kind": "prune_unused_tensors",
+      "removed_names": [
+        "__nhwc_to_nchw_perm_rank4__"
+      ],
+      "event_index": 198
+    }
+  ],
+  "records": [
+    {
+      "identifier": 1,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_809",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem",
+      "resolved_tflite_tensor_name": "node_Conv_811_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 1,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 46,
+          "kind": "replace_input",
+          "from": "getitem",
+          "to": "node_Conv_809_output_nhwc"
+        },
+        {
+          "event_index": 121,
+          "kind": "rename_tensor",
+          "from": "node_Conv_809_output_nhwc",
+          "to": "node_Conv_811_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem",
+        "node_Conv_809_output_nhwc",
+        "node_Conv_811_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 2,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh",
+      "resolved_tflite_tensor_name": "node_Conv_811_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 1,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 47,
+          "kind": "rename_tensor",
+          "from": "hardtanh",
+          "to": "node_Conv_811_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh",
+        "node_Conv_811_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 3,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_811",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_3",
+      "resolved_tflite_tensor_name": "node_Conv_813_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 2,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 48,
+          "kind": "replace_input",
+          "from": "getitem_3",
+          "to": "node_Conv_811_output_nhwc"
+        },
+        {
+          "event_index": 123,
+          "kind": "rename_tensor",
+          "from": "node_Conv_811_output_nhwc",
+          "to": "node_Conv_813_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_3",
+        "node_Conv_811_output_nhwc",
+        "node_Conv_813_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 4,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_2",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_1",
+      "resolved_tflite_tensor_name": "node_Conv_813_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 2,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 49,
+          "kind": "rename_tensor",
+          "from": "hardtanh_1",
+          "to": "node_Conv_813_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_1",
+        "node_Conv_813_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 5,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_813",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_6",
+      "resolved_tflite_tensor_name": "getitem_6",
+      "exists_in_final_model": false,
+      "is_graph_output": false,
+      "consumer_count": 0,
+      "producer_operator_index": null,
+      "producer_op_type": null,
+      "assume_channel_last_layout": false,
+      "status": "missing",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "getitem_6"
+      ]
+    },
+    {
+      "identifier": 6,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_815",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_9",
+      "resolved_tflite_tensor_name": "node_Conv_817_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 4,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 50,
+          "kind": "replace_input",
+          "from": "getitem_9",
+          "to": "node_Conv_815_output_nhwc"
+        },
+        {
+          "event_index": 125,
+          "kind": "rename_tensor",
+          "from": "node_Conv_815_output_nhwc",
+          "to": "node_Conv_817_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_9",
+        "node_Conv_815_output_nhwc",
+        "node_Conv_817_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 7,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_3",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_2",
+      "resolved_tflite_tensor_name": "node_Conv_817_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 4,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 51,
+          "kind": "rename_tensor",
+          "from": "hardtanh_2",
+          "to": "node_Conv_817_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_2",
+        "node_Conv_817_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 8,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_817",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_12",
+      "resolved_tflite_tensor_name": "node_Conv_819_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 6,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 52,
+          "kind": "replace_input",
+          "from": "getitem_12",
+          "to": "node_Conv_817_output_nhwc"
+        },
+        {
+          "event_index": 127,
+          "kind": "rename_tensor",
+          "from": "node_Conv_817_output_nhwc",
+          "to": "node_Conv_819_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_12",
+        "node_Conv_817_output_nhwc",
+        "node_Conv_819_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 9,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_4",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_3",
+      "resolved_tflite_tensor_name": "node_Conv_819_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 6,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 53,
+          "kind": "rename_tensor",
+          "from": "hardtanh_3",
+          "to": "node_Conv_819_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_3",
+        "node_Conv_819_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 10,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_819",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_15",
+      "resolved_tflite_tensor_name": "node_Conv_819_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 7,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 2,
+          "kind": "replace_input",
+          "from": "getitem_15",
+          "to": "node_Conv_819_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_15",
+        "node_Conv_819_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 11,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_821",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_18",
+      "resolved_tflite_tensor_name": "node_Conv_823_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 8,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 54,
+          "kind": "replace_input",
+          "from": "getitem_18",
+          "to": "node_Conv_821_output_nhwc"
+        },
+        {
+          "event_index": 129,
+          "kind": "rename_tensor",
+          "from": "node_Conv_821_output_nhwc",
+          "to": "node_Conv_823_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_18",
+        "node_Conv_821_output_nhwc",
+        "node_Conv_823_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 12,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_5",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_4",
+      "resolved_tflite_tensor_name": "node_Conv_823_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 8,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 55,
+          "kind": "rename_tensor",
+          "from": "hardtanh_4",
+          "to": "node_Conv_823_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_4",
+        "node_Conv_823_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 13,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_823",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_21",
+      "resolved_tflite_tensor_name": "node_Conv_825_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 9,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 56,
+          "kind": "replace_input",
+          "from": "getitem_21",
+          "to": "node_Conv_823_output_nhwc"
+        },
+        {
+          "event_index": 131,
+          "kind": "rename_tensor",
+          "from": "node_Conv_823_output_nhwc",
+          "to": "node_Conv_825_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_21",
+        "node_Conv_823_output_nhwc",
+        "node_Conv_825_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 14,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_6",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_5",
+      "resolved_tflite_tensor_name": "node_Conv_825_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 9,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 57,
+          "kind": "rename_tensor",
+          "from": "hardtanh_5",
+          "to": "node_Conv_825_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_5",
+        "node_Conv_825_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 15,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_825",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_24",
+      "resolved_tflite_tensor_name": "node_Conv_825_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 10,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 3,
+          "kind": "replace_input",
+          "from": "getitem_24",
+          "to": "node_Conv_825_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_24",
+        "node_Conv_825_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 16,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add",
+      "resolved_tflite_tensor_name": "node_Conv_827_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 11,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 4,
+          "kind": "rename_tensor",
+          "from": "add",
+          "to": "node_Conv_827_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add",
+        "node_Conv_827_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 17,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_827",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_27",
+      "resolved_tflite_tensor_name": "node_Conv_829_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 12,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 58,
+          "kind": "replace_input",
+          "from": "getitem_27",
+          "to": "node_Conv_827_output_nhwc"
+        },
+        {
+          "event_index": 133,
+          "kind": "rename_tensor",
+          "from": "node_Conv_827_output_nhwc",
+          "to": "node_Conv_829_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_27",
+        "node_Conv_827_output_nhwc",
+        "node_Conv_829_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 18,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_7",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_6",
+      "resolved_tflite_tensor_name": "node_Conv_829_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 12,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 59,
+          "kind": "rename_tensor",
+          "from": "hardtanh_6",
+          "to": "node_Conv_829_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_6",
+        "node_Conv_829_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 19,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_829",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_30",
+      "resolved_tflite_tensor_name": "node_Conv_831_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 14,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 60,
+          "kind": "replace_input",
+          "from": "getitem_30",
+          "to": "node_Conv_829_output_nhwc"
+        },
+        {
+          "event_index": 135,
+          "kind": "rename_tensor",
+          "from": "node_Conv_829_output_nhwc",
+          "to": "node_Conv_831_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_30",
+        "node_Conv_829_output_nhwc",
+        "node_Conv_831_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 20,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_8",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_7",
+      "resolved_tflite_tensor_name": "node_Conv_831_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 14,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 61,
+          "kind": "rename_tensor",
+          "from": "hardtanh_7",
+          "to": "node_Conv_831_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_7",
+        "node_Conv_831_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 21,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_831",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_33",
+      "resolved_tflite_tensor_name": "node_Conv_831_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 15,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 5,
+          "kind": "replace_input",
+          "from": "getitem_33",
+          "to": "node_Conv_831_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_33",
+        "node_Conv_831_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 22,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_833",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_36",
+      "resolved_tflite_tensor_name": "node_Conv_835_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 16,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 62,
+          "kind": "replace_input",
+          "from": "getitem_36",
+          "to": "node_Conv_833_output_nhwc"
+        },
+        {
+          "event_index": 137,
+          "kind": "rename_tensor",
+          "from": "node_Conv_833_output_nhwc",
+          "to": "node_Conv_835_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_36",
+        "node_Conv_833_output_nhwc",
+        "node_Conv_835_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 23,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_9",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_8",
+      "resolved_tflite_tensor_name": "node_Conv_835_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 16,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 63,
+          "kind": "rename_tensor",
+          "from": "hardtanh_8",
+          "to": "node_Conv_835_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_8",
+        "node_Conv_835_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 24,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_835",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_39",
+      "resolved_tflite_tensor_name": "node_Conv_837_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 17,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 64,
+          "kind": "replace_input",
+          "from": "getitem_39",
+          "to": "node_Conv_835_output_nhwc"
+        },
+        {
+          "event_index": 139,
+          "kind": "rename_tensor",
+          "from": "node_Conv_835_output_nhwc",
+          "to": "node_Conv_837_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_39",
+        "node_Conv_835_output_nhwc",
+        "node_Conv_837_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 25,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_10",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_9",
+      "resolved_tflite_tensor_name": "node_Conv_837_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 17,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 65,
+          "kind": "rename_tensor",
+          "from": "hardtanh_9",
+          "to": "node_Conv_837_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_9",
+        "node_Conv_837_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 26,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_837",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_42",
+      "resolved_tflite_tensor_name": "node_Conv_837_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 18,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 6,
+          "kind": "replace_input",
+          "from": "getitem_42",
+          "to": "node_Conv_837_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_42",
+        "node_Conv_837_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 27,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_1",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_1",
+      "resolved_tflite_tensor_name": "node_Conv_839_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 19,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 7,
+          "kind": "rename_tensor",
+          "from": "add_1",
+          "to": "node_Conv_839_input_nhwc"
+        },
+        {
+          "event_index": 9,
+          "kind": "rename_tensor",
+          "from": "node_Conv_839_input_nhwc",
+          "to": "add_1"
+        },
+        {
+          "event_index": 10,
+          "kind": "replace_input",
+          "from": "add_1",
+          "to": "node_Conv_839_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_1",
+        "node_Conv_839_input_nhwc",
+        "add_1",
+        "node_Conv_839_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 28,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_839",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_45",
+      "resolved_tflite_tensor_name": "node_Conv_841_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 20,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 66,
+          "kind": "replace_input",
+          "from": "getitem_45",
+          "to": "node_Conv_839_output_nhwc"
+        },
+        {
+          "event_index": 141,
+          "kind": "rename_tensor",
+          "from": "node_Conv_839_output_nhwc",
+          "to": "node_Conv_841_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_45",
+        "node_Conv_839_output_nhwc",
+        "node_Conv_841_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 29,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_11",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_10",
+      "resolved_tflite_tensor_name": "node_Conv_841_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 20,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 67,
+          "kind": "rename_tensor",
+          "from": "hardtanh_10",
+          "to": "node_Conv_841_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_10",
+        "node_Conv_841_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 30,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_841",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_48",
+      "resolved_tflite_tensor_name": "node_Conv_843_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 21,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 68,
+          "kind": "replace_input",
+          "from": "getitem_48",
+          "to": "node_Conv_841_output_nhwc"
+        },
+        {
+          "event_index": 143,
+          "kind": "rename_tensor",
+          "from": "node_Conv_841_output_nhwc",
+          "to": "node_Conv_843_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_48",
+        "node_Conv_841_output_nhwc",
+        "node_Conv_843_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 31,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_12",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_11",
+      "resolved_tflite_tensor_name": "node_Conv_843_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 21,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 69,
+          "kind": "rename_tensor",
+          "from": "hardtanh_11",
+          "to": "node_Conv_843_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_11",
+        "node_Conv_843_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 32,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_843",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_51",
+      "resolved_tflite_tensor_name": "node_Conv_843_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 22,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 11,
+          "kind": "replace_input",
+          "from": "getitem_51",
+          "to": "node_Conv_843_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_51",
+        "node_Conv_843_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 33,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_2",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_2",
+      "resolved_tflite_tensor_name": "node_Conv_845_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 23,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 12,
+          "kind": "rename_tensor",
+          "from": "add_2",
+          "to": "node_Conv_845_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_2",
+        "node_Conv_845_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 34,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_845",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_54",
+      "resolved_tflite_tensor_name": "node_Conv_847_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 24,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 70,
+          "kind": "replace_input",
+          "from": "getitem_54",
+          "to": "node_Conv_845_output_nhwc"
+        },
+        {
+          "event_index": 145,
+          "kind": "rename_tensor",
+          "from": "node_Conv_845_output_nhwc",
+          "to": "node_Conv_847_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_54",
+        "node_Conv_845_output_nhwc",
+        "node_Conv_847_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 35,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_13",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_12",
+      "resolved_tflite_tensor_name": "node_Conv_847_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 24,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 71,
+          "kind": "rename_tensor",
+          "from": "hardtanh_12",
+          "to": "node_Conv_847_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_12",
+        "node_Conv_847_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 36,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_847",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_57",
+      "resolved_tflite_tensor_name": "node_Conv_849_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 26,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 72,
+          "kind": "replace_input",
+          "from": "getitem_57",
+          "to": "node_Conv_847_output_nhwc"
+        },
+        {
+          "event_index": 147,
+          "kind": "rename_tensor",
+          "from": "node_Conv_847_output_nhwc",
+          "to": "node_Conv_849_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_57",
+        "node_Conv_847_output_nhwc",
+        "node_Conv_849_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 37,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_14",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_13",
+      "resolved_tflite_tensor_name": "node_Conv_849_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 26,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 73,
+          "kind": "rename_tensor",
+          "from": "hardtanh_13",
+          "to": "node_Conv_849_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_13",
+        "node_Conv_849_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 38,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_849",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_60",
+      "resolved_tflite_tensor_name": "node_Conv_849_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 27,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 13,
+          "kind": "replace_input",
+          "from": "getitem_60",
+          "to": "node_Conv_849_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_60",
+        "node_Conv_849_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 39,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_851",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_63",
+      "resolved_tflite_tensor_name": "node_Conv_853_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 28,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 74,
+          "kind": "replace_input",
+          "from": "getitem_63",
+          "to": "node_Conv_851_output_nhwc"
+        },
+        {
+          "event_index": 149,
+          "kind": "rename_tensor",
+          "from": "node_Conv_851_output_nhwc",
+          "to": "node_Conv_853_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_63",
+        "node_Conv_851_output_nhwc",
+        "node_Conv_853_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 40,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_15",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_14",
+      "resolved_tflite_tensor_name": "node_Conv_853_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 28,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 75,
+          "kind": "rename_tensor",
+          "from": "hardtanh_14",
+          "to": "node_Conv_853_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_14",
+        "node_Conv_853_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 41,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_853",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_66",
+      "resolved_tflite_tensor_name": "node_Conv_855_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 29,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 76,
+          "kind": "replace_input",
+          "from": "getitem_66",
+          "to": "node_Conv_853_output_nhwc"
+        },
+        {
+          "event_index": 151,
+          "kind": "rename_tensor",
+          "from": "node_Conv_853_output_nhwc",
+          "to": "node_Conv_855_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_66",
+        "node_Conv_853_output_nhwc",
+        "node_Conv_855_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 42,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_16",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_15",
+      "resolved_tflite_tensor_name": "node_Conv_855_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 29,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 77,
+          "kind": "rename_tensor",
+          "from": "hardtanh_15",
+          "to": "node_Conv_855_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_15",
+        "node_Conv_855_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 43,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_855",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_69",
+      "resolved_tflite_tensor_name": "node_Conv_855_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 30,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 14,
+          "kind": "replace_input",
+          "from": "getitem_69",
+          "to": "node_Conv_855_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_69",
+        "node_Conv_855_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 44,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_3",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_3",
+      "resolved_tflite_tensor_name": "node_Conv_857_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 31,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 15,
+          "kind": "rename_tensor",
+          "from": "add_3",
+          "to": "node_Conv_857_input_nhwc"
+        },
+        {
+          "event_index": 17,
+          "kind": "rename_tensor",
+          "from": "node_Conv_857_input_nhwc",
+          "to": "add_3"
+        },
+        {
+          "event_index": 18,
+          "kind": "replace_input",
+          "from": "add_3",
+          "to": "node_Conv_857_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_3",
+        "node_Conv_857_input_nhwc",
+        "add_3",
+        "node_Conv_857_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 45,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_857",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_72",
+      "resolved_tflite_tensor_name": "node_Conv_859_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 32,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 78,
+          "kind": "replace_input",
+          "from": "getitem_72",
+          "to": "node_Conv_857_output_nhwc"
+        },
+        {
+          "event_index": 153,
+          "kind": "rename_tensor",
+          "from": "node_Conv_857_output_nhwc",
+          "to": "node_Conv_859_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_72",
+        "node_Conv_857_output_nhwc",
+        "node_Conv_859_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 46,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_17",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_16",
+      "resolved_tflite_tensor_name": "node_Conv_859_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 32,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 79,
+          "kind": "rename_tensor",
+          "from": "hardtanh_16",
+          "to": "node_Conv_859_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_16",
+        "node_Conv_859_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 47,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_859",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_75",
+      "resolved_tflite_tensor_name": "node_Conv_861_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 33,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 80,
+          "kind": "replace_input",
+          "from": "getitem_75",
+          "to": "node_Conv_859_output_nhwc"
+        },
+        {
+          "event_index": 155,
+          "kind": "rename_tensor",
+          "from": "node_Conv_859_output_nhwc",
+          "to": "node_Conv_861_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_75",
+        "node_Conv_859_output_nhwc",
+        "node_Conv_861_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 48,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_18",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_17",
+      "resolved_tflite_tensor_name": "node_Conv_861_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 33,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 81,
+          "kind": "rename_tensor",
+          "from": "hardtanh_17",
+          "to": "node_Conv_861_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_17",
+        "node_Conv_861_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 49,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_861",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_78",
+      "resolved_tflite_tensor_name": "node_Conv_861_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 34,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 19,
+          "kind": "replace_input",
+          "from": "getitem_78",
+          "to": "node_Conv_861_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_78",
+        "node_Conv_861_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 50,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_4",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_4",
+      "resolved_tflite_tensor_name": "node_Conv_863_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 35,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 20,
+          "kind": "rename_tensor",
+          "from": "add_4",
+          "to": "node_Conv_863_input_nhwc"
+        },
+        {
+          "event_index": 22,
+          "kind": "rename_tensor",
+          "from": "node_Conv_863_input_nhwc",
+          "to": "add_4"
+        },
+        {
+          "event_index": 23,
+          "kind": "replace_input",
+          "from": "add_4",
+          "to": "node_Conv_863_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_4",
+        "node_Conv_863_input_nhwc",
+        "add_4",
+        "node_Conv_863_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 51,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_863",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_81",
+      "resolved_tflite_tensor_name": "node_Conv_865_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 36,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 82,
+          "kind": "replace_input",
+          "from": "getitem_81",
+          "to": "node_Conv_863_output_nhwc"
+        },
+        {
+          "event_index": 157,
+          "kind": "rename_tensor",
+          "from": "node_Conv_863_output_nhwc",
+          "to": "node_Conv_865_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_81",
+        "node_Conv_863_output_nhwc",
+        "node_Conv_865_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 52,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_19",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_18",
+      "resolved_tflite_tensor_name": "node_Conv_865_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 36,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 83,
+          "kind": "rename_tensor",
+          "from": "hardtanh_18",
+          "to": "node_Conv_865_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_18",
+        "node_Conv_865_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 53,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_865",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_84",
+      "resolved_tflite_tensor_name": "node_Conv_867_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 37,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 84,
+          "kind": "replace_input",
+          "from": "getitem_84",
+          "to": "node_Conv_865_output_nhwc"
+        },
+        {
+          "event_index": 159,
+          "kind": "rename_tensor",
+          "from": "node_Conv_865_output_nhwc",
+          "to": "node_Conv_867_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_84",
+        "node_Conv_865_output_nhwc",
+        "node_Conv_867_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 54,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_20",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_19",
+      "resolved_tflite_tensor_name": "node_Conv_867_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 37,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 85,
+          "kind": "rename_tensor",
+          "from": "hardtanh_19",
+          "to": "node_Conv_867_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_19",
+        "node_Conv_867_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 55,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_867",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_87",
+      "resolved_tflite_tensor_name": "node_Conv_867_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 38,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 24,
+          "kind": "replace_input",
+          "from": "getitem_87",
+          "to": "node_Conv_867_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_87",
+        "node_Conv_867_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 56,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_5",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_5",
+      "resolved_tflite_tensor_name": "node_Conv_869_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 39,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 25,
+          "kind": "rename_tensor",
+          "from": "add_5",
+          "to": "node_Conv_869_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_5",
+        "node_Conv_869_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 57,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_869",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_90",
+      "resolved_tflite_tensor_name": "node_Conv_871_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 40,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 86,
+          "kind": "replace_input",
+          "from": "getitem_90",
+          "to": "node_Conv_869_output_nhwc"
+        },
+        {
+          "event_index": 161,
+          "kind": "rename_tensor",
+          "from": "node_Conv_869_output_nhwc",
+          "to": "node_Conv_871_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_90",
+        "node_Conv_869_output_nhwc",
+        "node_Conv_871_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 58,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_21",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_20",
+      "resolved_tflite_tensor_name": "node_Conv_871_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 40,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 87,
+          "kind": "rename_tensor",
+          "from": "hardtanh_20",
+          "to": "node_Conv_871_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_20",
+        "node_Conv_871_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 59,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_871",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_93",
+      "resolved_tflite_tensor_name": "node_Conv_873_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 41,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 88,
+          "kind": "replace_input",
+          "from": "getitem_93",
+          "to": "node_Conv_871_output_nhwc"
+        },
+        {
+          "event_index": 163,
+          "kind": "rename_tensor",
+          "from": "node_Conv_871_output_nhwc",
+          "to": "node_Conv_873_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_93",
+        "node_Conv_871_output_nhwc",
+        "node_Conv_873_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 60,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_22",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_21",
+      "resolved_tflite_tensor_name": "node_Conv_873_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 41,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 89,
+          "kind": "rename_tensor",
+          "from": "hardtanh_21",
+          "to": "node_Conv_873_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_21",
+        "node_Conv_873_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 61,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_873",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_96",
+      "resolved_tflite_tensor_name": "node_Conv_873_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 42,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 26,
+          "kind": "replace_input",
+          "from": "getitem_96",
+          "to": "node_Conv_873_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_96",
+        "node_Conv_873_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 62,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_875",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_99",
+      "resolved_tflite_tensor_name": "node_Conv_877_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 43,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 90,
+          "kind": "replace_input",
+          "from": "getitem_99",
+          "to": "node_Conv_875_output_nhwc"
+        },
+        {
+          "event_index": 165,
+          "kind": "rename_tensor",
+          "from": "node_Conv_875_output_nhwc",
+          "to": "node_Conv_877_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_99",
+        "node_Conv_875_output_nhwc",
+        "node_Conv_877_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 63,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_23",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_22",
+      "resolved_tflite_tensor_name": "node_Conv_877_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 43,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 91,
+          "kind": "rename_tensor",
+          "from": "hardtanh_22",
+          "to": "node_Conv_877_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_22",
+        "node_Conv_877_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 64,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_877",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_102",
+      "resolved_tflite_tensor_name": "node_Conv_879_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 44,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 92,
+          "kind": "replace_input",
+          "from": "getitem_102",
+          "to": "node_Conv_877_output_nhwc"
+        },
+        {
+          "event_index": 167,
+          "kind": "rename_tensor",
+          "from": "node_Conv_877_output_nhwc",
+          "to": "node_Conv_879_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_102",
+        "node_Conv_877_output_nhwc",
+        "node_Conv_879_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 65,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_24",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_23",
+      "resolved_tflite_tensor_name": "node_Conv_879_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 44,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 93,
+          "kind": "rename_tensor",
+          "from": "hardtanh_23",
+          "to": "node_Conv_879_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_23",
+        "node_Conv_879_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 66,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_879",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_105",
+      "resolved_tflite_tensor_name": "node_Conv_879_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 45,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 27,
+          "kind": "replace_input",
+          "from": "getitem_105",
+          "to": "node_Conv_879_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_105",
+        "node_Conv_879_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 67,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_6",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_6",
+      "resolved_tflite_tensor_name": "node_Conv_881_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 46,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 28,
+          "kind": "rename_tensor",
+          "from": "add_6",
+          "to": "node_Conv_881_input_nhwc"
+        },
+        {
+          "event_index": 30,
+          "kind": "rename_tensor",
+          "from": "node_Conv_881_input_nhwc",
+          "to": "add_6"
+        },
+        {
+          "event_index": 31,
+          "kind": "replace_input",
+          "from": "add_6",
+          "to": "node_Conv_881_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_6",
+        "node_Conv_881_input_nhwc",
+        "add_6",
+        "node_Conv_881_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 68,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_881",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_108",
+      "resolved_tflite_tensor_name": "node_Conv_883_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 47,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 94,
+          "kind": "replace_input",
+          "from": "getitem_108",
+          "to": "node_Conv_881_output_nhwc"
+        },
+        {
+          "event_index": 169,
+          "kind": "rename_tensor",
+          "from": "node_Conv_881_output_nhwc",
+          "to": "node_Conv_883_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_108",
+        "node_Conv_881_output_nhwc",
+        "node_Conv_883_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 69,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_25",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_24",
+      "resolved_tflite_tensor_name": "node_Conv_883_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 47,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 95,
+          "kind": "rename_tensor",
+          "from": "hardtanh_24",
+          "to": "node_Conv_883_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_24",
+        "node_Conv_883_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 70,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_883",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_111",
+      "resolved_tflite_tensor_name": "node_Conv_885_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 48,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 96,
+          "kind": "replace_input",
+          "from": "getitem_111",
+          "to": "node_Conv_883_output_nhwc"
+        },
+        {
+          "event_index": 171,
+          "kind": "rename_tensor",
+          "from": "node_Conv_883_output_nhwc",
+          "to": "node_Conv_885_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_111",
+        "node_Conv_883_output_nhwc",
+        "node_Conv_885_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 71,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_26",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_25",
+      "resolved_tflite_tensor_name": "node_Conv_885_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 48,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 97,
+          "kind": "rename_tensor",
+          "from": "hardtanh_25",
+          "to": "node_Conv_885_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_25",
+        "node_Conv_885_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 72,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_885",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_114",
+      "resolved_tflite_tensor_name": "node_Conv_885_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 49,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 32,
+          "kind": "replace_input",
+          "from": "getitem_114",
+          "to": "node_Conv_885_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_114",
+        "node_Conv_885_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 73,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_7",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_7",
+      "resolved_tflite_tensor_name": "node_Conv_887_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 50,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 33,
+          "kind": "rename_tensor",
+          "from": "add_7",
+          "to": "node_Conv_887_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_7",
+        "node_Conv_887_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 74,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_887",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_117",
+      "resolved_tflite_tensor_name": "node_Conv_889_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 51,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 98,
+          "kind": "replace_input",
+          "from": "getitem_117",
+          "to": "node_Conv_887_output_nhwc"
+        },
+        {
+          "event_index": 173,
+          "kind": "rename_tensor",
+          "from": "node_Conv_887_output_nhwc",
+          "to": "node_Conv_889_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_117",
+        "node_Conv_887_output_nhwc",
+        "node_Conv_889_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 75,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_27",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_26",
+      "resolved_tflite_tensor_name": "node_Conv_889_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 51,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 99,
+          "kind": "rename_tensor",
+          "from": "hardtanh_26",
+          "to": "node_Conv_889_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_26",
+        "node_Conv_889_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 76,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_889",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_120",
+      "resolved_tflite_tensor_name": "node_Conv_891_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 53,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 100,
+          "kind": "replace_input",
+          "from": "getitem_120",
+          "to": "node_Conv_889_output_nhwc"
+        },
+        {
+          "event_index": 175,
+          "kind": "rename_tensor",
+          "from": "node_Conv_889_output_nhwc",
+          "to": "node_Conv_891_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_120",
+        "node_Conv_889_output_nhwc",
+        "node_Conv_891_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 77,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_28",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_27",
+      "resolved_tflite_tensor_name": "node_Conv_891_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 53,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 101,
+          "kind": "rename_tensor",
+          "from": "hardtanh_27",
+          "to": "node_Conv_891_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_27",
+        "node_Conv_891_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 78,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_891",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_123",
+      "resolved_tflite_tensor_name": "node_Conv_891_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 54,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 34,
+          "kind": "replace_input",
+          "from": "getitem_123",
+          "to": "node_Conv_891_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_123",
+        "node_Conv_891_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 79,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_893",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_126",
+      "resolved_tflite_tensor_name": "node_Conv_895_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 55,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 102,
+          "kind": "replace_input",
+          "from": "getitem_126",
+          "to": "node_Conv_893_output_nhwc"
+        },
+        {
+          "event_index": 177,
+          "kind": "rename_tensor",
+          "from": "node_Conv_893_output_nhwc",
+          "to": "node_Conv_895_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_126",
+        "node_Conv_893_output_nhwc",
+        "node_Conv_895_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 80,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_29",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_28",
+      "resolved_tflite_tensor_name": "node_Conv_895_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 55,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 103,
+          "kind": "rename_tensor",
+          "from": "hardtanh_28",
+          "to": "node_Conv_895_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_28",
+        "node_Conv_895_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 81,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_895",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_129",
+      "resolved_tflite_tensor_name": "node_Conv_897_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 56,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 104,
+          "kind": "replace_input",
+          "from": "getitem_129",
+          "to": "node_Conv_895_output_nhwc"
+        },
+        {
+          "event_index": 179,
+          "kind": "rename_tensor",
+          "from": "node_Conv_895_output_nhwc",
+          "to": "node_Conv_897_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_129",
+        "node_Conv_895_output_nhwc",
+        "node_Conv_897_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 82,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_30",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_29",
+      "resolved_tflite_tensor_name": "node_Conv_897_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 56,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 105,
+          "kind": "rename_tensor",
+          "from": "hardtanh_29",
+          "to": "node_Conv_897_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_29",
+        "node_Conv_897_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 83,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_897",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_132",
+      "resolved_tflite_tensor_name": "node_Conv_897_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 57,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 35,
+          "kind": "replace_input",
+          "from": "getitem_132",
+          "to": "node_Conv_897_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_132",
+        "node_Conv_897_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 84,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_8",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_8",
+      "resolved_tflite_tensor_name": "node_Conv_899_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 2,
+      "producer_operator_index": 58,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 36,
+          "kind": "rename_tensor",
+          "from": "add_8",
+          "to": "node_Conv_899_input_nhwc"
+        },
+        {
+          "event_index": 38,
+          "kind": "rename_tensor",
+          "from": "node_Conv_899_input_nhwc",
+          "to": "add_8"
+        },
+        {
+          "event_index": 39,
+          "kind": "replace_input",
+          "from": "add_8",
+          "to": "node_Conv_899_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_8",
+        "node_Conv_899_input_nhwc",
+        "add_8",
+        "node_Conv_899_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 85,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_899",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_135",
+      "resolved_tflite_tensor_name": "node_Conv_901_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 59,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 106,
+          "kind": "replace_input",
+          "from": "getitem_135",
+          "to": "node_Conv_899_output_nhwc"
+        },
+        {
+          "event_index": 181,
+          "kind": "rename_tensor",
+          "from": "node_Conv_899_output_nhwc",
+          "to": "node_Conv_901_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_135",
+        "node_Conv_899_output_nhwc",
+        "node_Conv_901_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 86,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_31",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_30",
+      "resolved_tflite_tensor_name": "node_Conv_901_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 59,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 107,
+          "kind": "rename_tensor",
+          "from": "hardtanh_30",
+          "to": "node_Conv_901_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_30",
+        "node_Conv_901_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 87,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_901",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_138",
+      "resolved_tflite_tensor_name": "node_Conv_903_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 60,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 108,
+          "kind": "replace_input",
+          "from": "getitem_138",
+          "to": "node_Conv_901_output_nhwc"
+        },
+        {
+          "event_index": 183,
+          "kind": "rename_tensor",
+          "from": "node_Conv_901_output_nhwc",
+          "to": "node_Conv_903_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_138",
+        "node_Conv_901_output_nhwc",
+        "node_Conv_903_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 88,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_32",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_31",
+      "resolved_tflite_tensor_name": "node_Conv_903_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 60,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 109,
+          "kind": "rename_tensor",
+          "from": "hardtanh_31",
+          "to": "node_Conv_903_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_31",
+        "node_Conv_903_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 89,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_903",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_141",
+      "resolved_tflite_tensor_name": "node_Conv_903_output_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 61,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 40,
+          "kind": "replace_input",
+          "from": "getitem_141",
+          "to": "node_Conv_903_output_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_141",
+        "node_Conv_903_output_nhwc"
+      ]
+    },
+    {
+      "identifier": 90,
+      "onnx_op_type": "Add",
+      "onnx_op_name": "node_add_9",
+      "onnx_output_index": 0,
+      "onnx_output_name": "add_9",
+      "resolved_tflite_tensor_name": "node_Conv_905_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 62,
+      "producer_op_type": "ADD",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 41,
+          "kind": "rename_tensor",
+          "from": "add_9",
+          "to": "node_Conv_905_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "add_9",
+        "node_Conv_905_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 91,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_905",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_144",
+      "resolved_tflite_tensor_name": "node_Conv_907_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 63,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 110,
+          "kind": "replace_input",
+          "from": "getitem_144",
+          "to": "node_Conv_905_output_nhwc"
+        },
+        {
+          "event_index": 185,
+          "kind": "rename_tensor",
+          "from": "node_Conv_905_output_nhwc",
+          "to": "node_Conv_907_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_144",
+        "node_Conv_905_output_nhwc",
+        "node_Conv_907_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 92,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_33",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_32",
+      "resolved_tflite_tensor_name": "node_Conv_907_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 63,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 111,
+          "kind": "rename_tensor",
+          "from": "hardtanh_32",
+          "to": "node_Conv_907_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_32",
+        "node_Conv_907_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 93,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_907",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_147",
+      "resolved_tflite_tensor_name": "node_Conv_909_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 64,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 112,
+          "kind": "replace_input",
+          "from": "getitem_147",
+          "to": "node_Conv_907_output_nhwc"
+        },
+        {
+          "event_index": 187,
+          "kind": "rename_tensor",
+          "from": "node_Conv_907_output_nhwc",
+          "to": "node_Conv_909_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_147",
+        "node_Conv_907_output_nhwc",
+        "node_Conv_909_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 94,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_34",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_33",
+      "resolved_tflite_tensor_name": "node_Conv_909_input_nhwc",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 64,
+      "producer_op_type": "DEPTHWISE_CONV_2D",
+      "assume_channel_last_layout": true,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 113,
+          "kind": "rename_tensor",
+          "from": "hardtanh_33",
+          "to": "node_Conv_909_input_nhwc"
+        }
+      ],
+      "rewrite_name_chain": [
+        "hardtanh_33",
+        "node_Conv_909_input_nhwc"
+      ]
+    },
+    {
+      "identifier": 95,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_909",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_150",
+      "resolved_tflite_tensor_name": "getitem_150",
+      "exists_in_final_model": false,
+      "is_graph_output": false,
+      "consumer_count": 0,
+      "producer_operator_index": null,
+      "producer_op_type": null,
+      "assume_channel_last_layout": false,
+      "status": "missing",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "getitem_150"
+      ]
+    },
+    {
+      "identifier": 96,
+      "onnx_op_type": "Conv",
+      "onnx_op_name": "node_Conv_911",
+      "onnx_output_index": 0,
+      "onnx_output_name": "getitem_153",
+      "resolved_tflite_tensor_name": "hardtanh_34",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 66,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": false,
+      "status": "rewritten",
+      "is_rewritten": true,
+      "rewrite_events": [
+        {
+          "event_index": 43,
+          "kind": "replace_input",
+          "from": "getitem_153",
+          "to": "node_Conv_911_output_nhwc"
+        },
+        {
+          "event_index": 189,
+          "kind": "rename_tensor",
+          "from": "node_Conv_911_output_nhwc",
+          "to": "hardtanh_34"
+        }
+      ],
+      "rewrite_name_chain": [
+        "getitem_153",
+        "node_Conv_911_output_nhwc",
+        "hardtanh_34"
+      ]
+    },
+    {
+      "identifier": 97,
+      "onnx_op_type": "Clip",
+      "onnx_op_name": "n4_35",
+      "onnx_output_index": 0,
+      "onnx_output_name": "hardtanh_34",
+      "resolved_tflite_tensor_name": "hardtanh_34",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 66,
+      "producer_op_type": "CONV_2D",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "hardtanh_34"
+      ]
+    },
+    {
+      "identifier": 98,
+      "onnx_op_type": "ReduceMean",
+      "onnx_op_name": "node_mean",
+      "onnx_output_index": 0,
+      "onnx_output_name": "mean",
+      "resolved_tflite_tensor_name": "mean",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 67,
+      "producer_op_type": "MEAN",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "mean"
+      ]
+    },
+    {
+      "identifier": 99,
+      "onnx_op_type": "Reshape",
+      "onnx_op_name": "node_view",
+      "onnx_output_index": 0,
+      "onnx_output_name": "view",
+      "resolved_tflite_tensor_name": "view",
+      "exists_in_final_model": true,
+      "is_graph_output": false,
+      "consumer_count": 1,
+      "producer_operator_index": 68,
+      "producer_op_type": "RESHAPE",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "view"
+      ]
+    },
+    {
+      "identifier": 100,
+      "onnx_op_type": "Gemm",
+      "onnx_op_name": "node_linear",
+      "onnx_output_index": 0,
+      "onnx_output_name": "output",
+      "resolved_tflite_tensor_name": "output",
+      "exists_in_final_model": true,
+      "is_graph_output": true,
+      "consumer_count": 0,
+      "producer_operator_index": 69,
+      "producer_op_type": "FULLY_CONNECTED",
+      "assume_channel_last_layout": false,
+      "status": "direct",
+      "is_rewritten": false,
+      "rewrite_events": [],
+      "rewrite_name_chain": [
+        "output"
+      ]
+    }
+  ]
+}
