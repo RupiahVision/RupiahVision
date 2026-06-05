@@ -21,9 +21,12 @@ import { PredictionList } from "./src/components/PredictionList";
 import { colors } from "./src/theme/colors";
 
 const defaultApiUrl = Platform.select({
-  android: "http://10.0.2.2:8000",
-  ios: "http://localhost:8000",
-  default: "http://localhost:8000",
+  android: "https://rupiahvision.onrender.com",
+  ios: "https://rupiahvision.onrender.com",
+  default: "https://rupiahvision.onrender.com",
+  // android: "http://10.0.2.2:8000",
+  // ios: "http://localhost:8000",
+  // default: "http://localhost:8000",
 });
 
 export default function App() {
