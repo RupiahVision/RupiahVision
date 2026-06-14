@@ -20,7 +20,7 @@ export function ActionButton({ icon, label, onPress, variant = "primary", disabl
     >
       <Ionicons
         name={icon}
-        size={19}
+        size={25}
         color={isSecondary ? colors.primary : "#ffffff"}
       />
       <Text style={[styles.label, isSecondary && styles.secondaryLabel]}>{label}</Text>
@@ -30,22 +30,23 @@ export function ActionButton({ icon, label, onPress, variant = "primary", disabl
 
 const styles = StyleSheet.create({
   button: {
-    minHeight: 48,
+    flex: 1,
+    minHeight: 62,
     borderRadius: 8,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
     gap: 8,
     paddingHorizontal: 16,
-    borderWidth: 1,
+    borderWidth: 1.5,
   },
   primary: {
-    backgroundColor: colors.primary,
-    borderColor: colors.primary,
+    backgroundColor: colors.primaryDark,
+    borderColor: colors.primaryDark,
   },
   secondary: {
-    backgroundColor: colors.surface,
-    borderColor: colors.border,
+    backgroundColor: "#fffdf8",
+    borderColor: colors.primaryDark,
   },
   disabled: {
     opacity: 0.55,
@@ -55,8 +56,8 @@ const styles = StyleSheet.create({
   },
   label: {
     color: "#ffffff",
-    fontWeight: "700",
-    fontSize: 15,
+    fontWeight: "800",
+    fontSize: 19,
   },
   secondaryLabel: {
     color: colors.primary,

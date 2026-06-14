@@ -1,74 +1,163 @@
 import { Ionicons } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 import { StatusBar } from "expo-status-bar";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import {
   ActivityIndicator,
   Alert,
   Image,
-  KeyboardAvoidingView,
-  Platform,
   SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   View,
 } from "react-native";
 
 import { ActionButton } from "./src/components/ActionButton";
 import { PredictionList } from "./src/components/PredictionList";
 import { colors } from "./src/theme/colors";
+import { formatPredictionLabel } from "./src/utils/labels";
 
-const defaultApiUrl = Platform.select({
-  android: "https://rupiahvision.onrender.com",
-  ios: "https://rupiahvision.onrender.com",
-  default: "https://rupiahvision.onrender.com",
-  // android: "http://10.0.2.2:8000",
-  // ios: "http://localhost:8000",
-  // default: "http://localhost:8000",
-});
+const backendApiUrl = "https://rupiahvision.onrender.com";
+const requestTimeoutMs = 45000;
+
+function getFileName(asset) {
+  if (asset.fileName) {
+    return asset.fileName;
+  }
+
+  const uriName = asset.uri?.split("/").pop();
+  return uriName && uriName.includes(".") ? uriName : `rupiahvision-${Date.now()}.jpg`;
+}
+
+function getMimeType(asset, fileName) {
+  if (asset.mimeType) {
+    return asset.mimeType;
+  }
+
+  const ext = fileName.split(".").pop()?.toLowerCase();
+  if (ext === "png") {
+    return "image/png";
+  }
+  if (ext === "webp") {
+    return "image/webp";
+  }
+
+  return "image/jpeg";
+}
+
+function getUploadErrorMessage(err) {
+  if (err?.name === "AbortError") {
+    return "Backend terlalu lama merespons. Pastikan service Render sudah Live, lalu coba lagi.";
+  }
+
+  if (err?.message === "Network request failed") {
+    return "Tidak bisa menghubungi backend RupiahVision. Pastikan koneksi internet aktif dan coba lagi.";
+  }
+
+  return err?.message || "Gagal menghubungi backend.";
+}
+
+function ResultMetrics({ result }) {
+  const isBanknote = result.label !== "bukanuang";
+  const nominal = isBanknote ? formatPredictionLabel(result.label) : "Tidak dikenali";
+  const status = isBanknote ? "Uang kertas Indonesia" : "Bukan uang kertas";
+  const confidence = `${Math.round(result.confidence * 100)}%`;
+
+  return (
+    <View style={styles.resultCard}>
+      <Text style={styles.resultTitle}>Informasi Hasil</Text>
+      <MetricRow
+        icon={<Text style={styles.rupiahIconText}>Rp</Text>}
+        iconStyle={styles.rupiahIcon}
+        label="Nominal"
+        value={nominal}
+        valueStyle={styles.nominalValue}
+      />
+      <MetricRow
+        icon={<Ionicons name="shield-checkmark" size={27} color={colors.primary} />}
+        iconStyle={styles.lineIcon}
+        label="Confidence"
+        value={confidence}
+        valueStyle={styles.confidenceValue}
+      />
+      <MetricRow
+        icon={<Ionicons name="business" size={27} color={colors.primary} />}
+        iconStyle={styles.lineIcon}
+        label="Status"
+        value={status}
+        valueStyle={styles.statusValue}
+        withDivider={false}
+      />
+    </View>
+  );
+}
+
+function MetricRow({ icon, iconStyle, label, value, valueStyle, withDivider = true }) {
+  return (
+    <View style={[styles.metricRow, withDivider && styles.metricDivider]}>
+      <View style={[styles.metricIcon, iconStyle]}>{icon}</View>
+      <Text style={styles.metricLabel}>{label}</Text>
+      <Text style={[styles.metricValue, valueStyle]}>{value}</Text>
+    </View>
+  );
+}
 
 export default function App() {
-  const [apiUrl, setApiUrl] = useState(defaultApiUrl);
   const [image, setImage] = useState(null);
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const cleanApiUrl = useMemo(() => apiUrl.replace(/\/+$/, ""), [apiUrl]);
-
   async function pickImage(source) {
     setError("");
     setResult(null);
 
-    const permission =
-      source === "camera"
-        ? await ImagePicker.requestCameraPermissionsAsync()
-        : await ImagePicker.requestMediaLibraryPermissionsAsync();
+    try {
+      if (source === "camera") {
+        const permission = await ImagePicker.requestCameraPermissionsAsync();
+        if (!permission.granted) {
+          Alert.alert("Izin diperlukan", "Aplikasi membutuhkan izin kamera.");
+          return;
+        }
+      } else {
+        const permission = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (!permission.granted && !permission.canAskAgain) {
+          Alert.alert("Izin diperlukan", "Aktifkan izin foto/galeri dari pengaturan aplikasi.");
+          return;
+        }
+      }
 
-    if (!permission.granted) {
-      Alert.alert("Izin diperlukan", "Aplikasi membutuhkan izin untuk memilih gambar.");
-      return;
-    }
+      const picker =
+        source === "camera" ? ImagePicker.launchCameraAsync : ImagePicker.launchImageLibraryAsync;
 
-    const picker =
-      source === "camera" ? ImagePicker.launchCameraAsync : ImagePicker.launchImageLibraryAsync;
+      const response = await picker({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        quality: 0.85,
+        allowsEditing: false,
+        selectionLimit: 1,
+        legacy: source !== "camera",
+      });
 
-    const response = await picker({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      quality: 0.85,
-      allowsEditing: true,
-      aspect: [1, 1],
-    });
+      if (!response.canceled && response.assets?.[0]) {
+        const asset = response.assets[0];
+        const fileName = getFileName(asset);
+        const selectedImage = {
+          ...asset,
+          fileName,
+          mimeType: getMimeType(asset, fileName),
+        };
 
-    if (!response.canceled && response.assets?.[0]) {
-      setImage(response.assets[0]);
+        setImage(selectedImage);
+        await classifyImage(selectedImage);
+      }
+    } catch (err) {
+      setError(err?.message || "Gagal membuka gambar. Coba pilih gambar lain dari Galeri.");
     }
   }
 
-  async function classifyImage() {
-    if (!image) {
+  async function classifyImage(selectedImage = image) {
+    if (!selectedImage) {
       Alert.alert("Pilih gambar", "Ambil atau pilih gambar terlebih dahulu.");
       return;
     }
@@ -77,21 +166,24 @@ export default function App() {
     setError("");
     setResult(null);
 
+    let timeoutId;
     try {
-      const filename = image.uri.split("/").pop() || "image.jpg";
-      const ext = filename.split(".").pop()?.toLowerCase() || "jpg";
-      const mimeType = ext === "png" ? "image/png" : "image/jpeg";
+      const controller = new AbortController();
+      timeoutId = setTimeout(() => controller.abort(), requestTimeoutMs);
+      const fileName = getFileName(selectedImage);
+      const mimeType = getMimeType(selectedImage, fileName);
 
       const data = new FormData();
       data.append("file", {
-        uri: image.uri,
-        name: filename,
+        uri: selectedImage.uri,
+        name: fileName,
         type: mimeType,
       });
 
-      const response = await fetch(`${cleanApiUrl}/predict`, {
+      const response = await fetch(`${backendApiUrl}/predict`, {
         method: "POST",
         body: data,
+        signal: controller.signal,
       });
 
       const payload = await response.json();
@@ -101,8 +193,9 @@ export default function App() {
 
       setResult(payload);
     } catch (err) {
-      setError(err.message || "Gagal menghubungi backend.");
+      setError(getUploadErrorMessage(err));
     } finally {
+      clearTimeout(timeoutId);
       setLoading(false);
     }
   }
@@ -110,97 +203,62 @@ export default function App() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="dark" />
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : undefined}
-        style={styles.keyboard}
-      >
-        <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
-          <View style={styles.header}>
-            <View style={styles.logo}>
-              <Ionicons name="scan" size={26} color="#ffffff" />
+      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+        <View style={styles.header}>
+          <Text style={styles.title}>RupiahVision</Text>
+          <Text style={styles.subtitle}>
+            AI-Based Indonesian Banknote Recognition for Museum Experience
+          </Text>
+        </View>
+
+        <View style={styles.imageFrame}>
+          {image ? (
+            <Image source={{ uri: image.uri }} style={styles.preview} />
+          ) : (
+            <View style={styles.emptyPreview}>
+              <Ionicons name="image-outline" size={56} color={colors.muted} />
+              <Text style={styles.emptyTitle}>Belum ada gambar</Text>
             </View>
-            <View style={styles.headerText}>
-              <Text style={styles.title}>RupiahVision</Text>
-              <Text style={styles.subtitle}>Frontend React Native dan backend klasifikasi gambar.</Text>
-            </View>
-          </View>
+          )}
+        </View>
 
-          <View style={styles.panel}>
-            <Text style={styles.sectionTitle}>Backend API</Text>
-            <TextInput
-              autoCapitalize="none"
-              autoCorrect={false}
-              keyboardType="url"
-              onChangeText={setApiUrl}
-              placeholder="http://localhost:8000"
-              style={styles.input}
-              value={apiUrl}
-            />
-          </View>
-
-          <View style={styles.imageFrame}>
-            {image ? (
-              <Image source={{ uri: image.uri }} style={styles.preview} />
-            ) : (
-              <View style={styles.emptyPreview}>
-                <Ionicons name="image-outline" size={56} color={colors.muted} />
-                <Text style={styles.emptyTitle}>Belum ada gambar</Text>
-              </View>
-            )}
-          </View>
-
-          <View style={styles.actions}>
-            <ActionButton icon="camera" label="Kamera" onPress={() => pickImage("camera")} />
-            <ActionButton
-              icon="images"
-              label="Galeri"
-              onPress={() => pickImage("library")}
-              variant="secondary"
-            />
-          </View>
-
+        <View style={styles.actions}>
           <ActionButton
-            disabled={loading || !image}
-            icon="sparkles"
-            label={loading ? "Mengklasifikasi..." : "Klasifikasi Gambar"}
-            onPress={classifyImage}
+            disabled={loading}
+            icon="camera"
+            label="Kamera"
+            onPress={() => pickImage("camera")}
           />
+          <ActionButton
+            disabled={loading}
+            icon="images"
+            label="Galeri"
+            onPress={() => pickImage("library")}
+            variant="secondary"
+          />
+        </View>
 
-          {loading && (
-            <View style={styles.loading}>
-              <ActivityIndicator color={colors.primary} />
-              <Text style={styles.loadingText}>Memproses gambar di backend...</Text>
-            </View>
-          )}
+        {loading && (
+          <View style={styles.loading}>
+            <ActivityIndicator color={colors.primary} />
+            <Text style={styles.loadingText}>Memproses gambar di backend...</Text>
+          </View>
+        )}
 
-          {!!error && (
-            <View style={styles.errorBox}>
-              <Ionicons name="alert-circle" size={20} color={colors.danger} />
-              <Text style={styles.errorText}>{error}</Text>
-            </View>
-          )}
+        {!!error && (
+          <View style={styles.errorBox}>
+            <Ionicons name="alert-circle" size={20} color={colors.danger} />
+            <Text style={styles.errorText}>{error}</Text>
+          </View>
+        )}
 
-          {result && (
-            <View style={styles.resultPanel}>
-              <View style={styles.resultHeader}>
-                <View>
-                  <Text style={styles.resultEyebrow}>Prediksi utama</Text>
-                  <Text style={styles.resultLabel}>{result.label}</Text>
-                </View>
-                <View style={styles.confidencePill}>
-                  <Text style={styles.confidenceText}>
-                    {Math.round(result.confidence * 100)}%
-                  </Text>
-                </View>
-              </View>
-              <Text style={styles.meta}>
-                Resolusi gambar: {result.image_width} x {result.image_height}
-              </Text>
-              <PredictionList predictions={result.predictions} />
-            </View>
-          )}
-        </ScrollView>
-      </KeyboardAvoidingView>
+        {result && (
+          <>
+            <ResultMetrics result={result} />
+            <PredictionList predictions={result.predictions} />
+          </>
+        )}
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -210,75 +268,46 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
   },
-  keyboard: {
-    flex: 1,
-  },
   container: {
-    padding: 20,
-    gap: 18,
+    paddingHorizontal: 18,
+    paddingTop: 24,
+    paddingBottom: 28,
+    gap: 14,
   },
   header: {
-    flexDirection: "row",
     alignItems: "center",
-    gap: 14,
-    paddingTop: 8,
-  },
-  logo: {
-    width: 54,
-    height: 54,
-    borderRadius: 8,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.primary,
-  },
-  headerText: {
-    flex: 1,
+    paddingTop: 12,
+    paddingBottom: 4,
   },
   title: {
-    fontSize: 27,
+    color: colors.primaryDark,
+    fontFamily: "serif",
+    fontSize: 42,
     fontWeight: "800",
-    color: colors.ink,
+    lineHeight: 48,
+    textAlign: "center",
   },
   subtitle: {
-    marginTop: 4,
-    fontSize: 14,
-    lineHeight: 20,
+    marginTop: 2,
     color: colors.muted,
-  },
-  panel: {
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 8,
-    backgroundColor: colors.surface,
-    padding: 14,
-    gap: 10,
-  },
-  sectionTitle: {
-    color: colors.ink,
-    fontSize: 14,
-    fontWeight: "800",
-  },
-  input: {
-    minHeight: 46,
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 8,
-    paddingHorizontal: 12,
-    color: colors.ink,
-    backgroundColor: "#fbfaf7",
+    fontSize: 17,
+    lineHeight: 23,
+    maxWidth: 310,
+    textAlign: "center",
   },
   imageFrame: {
     width: "100%",
-    aspectRatio: 1,
-    borderRadius: 8,
+    aspectRatio: 1.5,
+    borderRadius: 12,
     overflow: "hidden",
     borderWidth: 1,
-    borderColor: colors.border,
-    backgroundColor: colors.surface,
+    borderColor: colors.gold,
+    backgroundColor: "#f5ead6",
   },
   preview: {
     width: "100%",
     height: "100%",
+    resizeMode: "cover",
   },
   emptyPreview: {
     flex: 1,
@@ -292,7 +321,7 @@ const styles = StyleSheet.create({
   },
   actions: {
     flexDirection: "row",
-    gap: 12,
+    gap: 14,
   },
   loading: {
     alignItems: "center",
@@ -319,48 +348,69 @@ const styles = StyleSheet.create({
     color: colors.danger,
     fontWeight: "700",
   },
-  resultPanel: {
+  resultCard: {
     borderWidth: 1,
     borderColor: colors.border,
-    borderRadius: 8,
-    backgroundColor: colors.surface,
-    padding: 16,
-    gap: 10,
+    borderRadius: 12,
+    backgroundColor: "#fffdf8",
+    paddingHorizontal: 14,
+    paddingTop: 14,
+    paddingBottom: 8,
   },
-  resultHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+  resultTitle: {
+    color: colors.ink,
+    fontSize: 18,
+    fontWeight: "900",
+    marginBottom: 8,
+  },
+  metricRow: {
+    minHeight: 58,
     alignItems: "center",
+    flexDirection: "row",
     gap: 12,
   },
-  resultEyebrow: {
-    color: colors.muted,
-    fontSize: 12,
-    fontWeight: "800",
-    textTransform: "uppercase",
+  metricDivider: {
+    borderBottomWidth: 1,
+    borderBottomColor: colors.track,
   },
-  resultLabel: {
-    color: colors.ink,
-    fontSize: 22,
-    fontWeight: "900",
-    marginTop: 3,
-  },
-  confidencePill: {
-    minWidth: 66,
-    height: 42,
+  metricIcon: {
+    width: 34,
+    height: 34,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 8,
-    backgroundColor: "#dcfce7",
   },
-  confidenceText: {
-    color: colors.success,
+  rupiahIcon: {
+    borderRadius: 999,
+    backgroundColor: colors.primary,
+  },
+  rupiahIconText: {
+    color: "#ffffff",
+    fontSize: 17,
     fontWeight: "900",
-    fontSize: 16,
   },
-  meta: {
-    color: colors.muted,
-    fontSize: 13,
+  lineIcon: {
+    backgroundColor: "transparent",
+  },
+  metricLabel: {
+    width: 92,
+    color: colors.ink,
+    fontSize: 16,
     fontWeight: "600",
+  },
+  metricValue: {
+    flex: 1,
+    color: colors.primaryDark,
+    fontWeight: "900",
+    textAlign: "right",
+  },
+  nominalValue: {
+    fontSize: 23,
+    letterSpacing: 0,
+  },
+  confidenceValue: {
+    fontSize: 23,
+  },
+  statusValue: {
+    fontSize: 16,
   },
 });

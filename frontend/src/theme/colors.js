@@ -5,9 +5,11 @@ export const colors = {
   muted: "#68717d",
   border: "#d8d2c4",
   primary: "#0f766e",
-  primaryDark: "#115e59",
+  primaryDark: "#063f3d",
+  gold: "#c9971a",
   accent: "#c2410c",
   success: "#15803d",
   danger: "#b91c1c",
   track: "#e8e2d6",
+  navMuted: "#6f746f",
 };
