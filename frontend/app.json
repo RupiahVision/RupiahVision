@@ -5,9 +5,10 @@
     "version": "1.0.1",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "newArchEnabled": false,
     "splash": {
       "resizeMode": "contain",
-      "backgroundColor": "#f6f4ef"
+      "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
       "**/*"

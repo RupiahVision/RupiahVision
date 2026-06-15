@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
     borderRadius: 12,
-    backgroundColor: "#fffdf8",
+    backgroundColor: colors.surface,
     padding: 14,
     gap: 14,
   },
@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.ink,
+    fontFamily: "Roboto",
     fontSize: 18,
     fontWeight: "800",
   },
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: colors.ink,
+    fontFamily: "Roboto",
     width: 116,
     fontWeight: "600",
     fontSize: 15,
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
   percent: {
     width: 38,
     color: colors.ink,
+    fontFamily: "Roboto",
     fontWeight: "700",
     fontSize: 15,
     textAlign: "right",

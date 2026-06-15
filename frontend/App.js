@@ -216,7 +216,7 @@ export default function App() {
             <Image source={{ uri: image.uri }} style={styles.preview} />
           ) : (
             <View style={styles.emptyPreview}>
-              <Ionicons name="image-outline" size={56} color={colors.muted} />
+              <Ionicons name="image-outline" size={56} color={colors.placeholder} />
               <Text style={styles.emptyTitle}>Belum ada gambar</Text>
             </View>
           )}
@@ -281,7 +281,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: colors.primaryDark,
-    fontFamily: "serif",
+    fontFamily: "Roboto",
     fontSize: 42,
     fontWeight: "800",
     lineHeight: 48,
@@ -290,6 +290,7 @@ const styles = StyleSheet.create({
   subtitle: {
     marginTop: 2,
     color: colors.muted,
+    fontFamily: "Roboto",
     fontSize: 17,
     lineHeight: 23,
     maxWidth: 310,
@@ -301,8 +302,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     overflow: "hidden",
     borderWidth: 1,
-    borderColor: colors.gold,
-    backgroundColor: "#f5ead6",
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
   },
   preview: {
     width: "100%",
@@ -316,7 +317,8 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   emptyTitle: {
-    color: colors.muted,
+    color: colors.placeholder,
+    fontFamily: "Roboto",
     fontWeight: "700",
   },
   actions: {
@@ -331,6 +333,7 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     color: colors.muted,
+    fontFamily: "Roboto",
     fontWeight: "600",
   },
   errorBox: {
@@ -346,19 +349,21 @@ const styles = StyleSheet.create({
   errorText: {
     flex: 1,
     color: colors.danger,
+    fontFamily: "Roboto",
     fontWeight: "700",
   },
   resultCard: {
     borderWidth: 1,
     borderColor: colors.border,
     borderRadius: 12,
-    backgroundColor: "#fffdf8",
+    backgroundColor: colors.surface,
     paddingHorizontal: 14,
     paddingTop: 14,
     paddingBottom: 8,
   },
   resultTitle: {
     color: colors.ink,
+    fontFamily: "Roboto",
     fontSize: 18,
     fontWeight: "900",
     marginBottom: 8,
@@ -385,6 +390,7 @@ const styles = StyleSheet.create({
   },
   rupiahIconText: {
     color: "#ffffff",
+    fontFamily: "Roboto",
     fontSize: 17,
     fontWeight: "900",
   },
@@ -394,12 +400,14 @@ const styles = StyleSheet.create({
   metricLabel: {
     width: 92,
     color: colors.ink,
+    fontFamily: "Roboto",
     fontSize: 16,
     fontWeight: "600",
   },
   metricValue: {
     flex: 1,
     color: colors.primaryDark,
+    fontFamily: "Roboto",
     fontWeight: "900",
     textAlign: "right",
   },

@@ -66,6 +66,23 @@ function Ensure-ManifestPermission($ManifestPath, $PermissionName) {
   [System.IO.File]::WriteAllText($ManifestPath, $updated)
 }
 
+function Ensure-Arm64AbiFilter($BuildGradlePath) {
+  $content = [System.IO.File]::ReadAllText($BuildGradlePath)
+  if ($content.Contains("RupiahVision arm64-only release")) {
+    return
+  }
+
+  $replacement = @'
+    defaultConfig {
+        // RupiahVision arm64-only release.
+        ndk {
+            abiFilters "arm64-v8a"
+        }
+'@
+  $updated = $content.Replace("    defaultConfig {", $replacement)
+  [System.IO.File]::WriteAllText($BuildGradlePath, $updated)
+}
+
 function Ensure-CMakeSingleJob($CMakePath) {
   $content = [System.IO.File]::ReadAllText($CMakePath)
   if ($content.Contains("RupiahVision native build memory guard")) {
@@ -126,8 +143,10 @@ $ExistingJdkRoot = Join-Path $WorkspaceRoot "work\jdk\jdk-17.0.19+10"
 $ExistingNodeRoot = Join-Path $WorkspaceRoot "work\node20\node-v20.19.5-win-x64"
 $JdkRoot = if (Test-Path -LiteralPath $ExistingJdkRoot) { $ExistingJdkRoot } else { Join-Path $ToolsRoot "jdk-17.0.19+10" }
 $NodeRoot = if (Test-Path -LiteralPath $ExistingNodeRoot) { $ExistingNodeRoot } else { Join-Path $ToolsRoot "node-v20.19.5-win-x64" }
-$AndroidSdkRoot = Join-Path $env:LOCALAPPDATA "Android\Sdk"
+$AndroidSdkRoot = Join-Path $WorkspaceRoot "work\android-sdk"
 $CmdlineToolsRoot = Join-Path $AndroidSdkRoot "cmdline-tools\latest"
+$GradleUserHome = Join-Path $WorkspaceRoot "work\gradle-home"
+$BuildTempRoot = Join-Path $WorkspaceRoot "work\temp"
 
 Write-Step "Preparing portable JDK 17"
 if (-not (Test-Path -LiteralPath $JdkRoot)) {
@@ -164,6 +183,9 @@ $env:JAVA_HOME = $JdkRoot
 $env:NODE_HOME = $NodeRoot
 $env:ANDROID_HOME = $AndroidSdkRoot
 $env:ANDROID_SDK_ROOT = $AndroidSdkRoot
+$env:GRADLE_USER_HOME = $GradleUserHome
+$env:TEMP = $BuildTempRoot
+$env:TMP = $BuildTempRoot
 $env:NODE_ENV = "production"
 $env:CI = "true"
 $env:MAX_WORKERS = "1"
@@ -173,9 +195,23 @@ $env:GRADLE_OPTS = "-Xss1m -XX:TieredStopAtLevel=1 -XX:ReservedCodeCacheSize=96m
 $env:KOTLIN_COMPILER_EXECUTION_STRATEGY = "in-process"
 $env:Path = "$NodeRoot;$JdkRoot\bin;$AndroidSdkRoot\platform-tools;$AndroidSdkRoot\cmdline-tools\latest\bin;$AndroidSdkRoot\tools\bin;$env:Path"
 
+Ensure-Directory $GradleUserHome
+Ensure-Directory $BuildTempRoot
+
 Write-Step "Accepting Android SDK licenses"
 Ensure-Directory (Join-Path $AndroidSdkRoot "licenses")
 1..100 | ForEach-Object { "y" } | & "$AndroidSdkRoot\cmdline-tools\latest\bin\sdkmanager.bat" --licenses | Out-Null
+
+Write-Step "Installing Android SDK 36 and NDK 27 on drive D"
+& "$AndroidSdkRoot\cmdline-tools\latest\bin\sdkmanager.bat" `
+  "platform-tools" `
+  "platforms;android-36" `
+  "build-tools;36.0.0" `
+  "ndk;27.1.12297006" `
+  "cmake;3.22.1"
+if ($LASTEXITCODE -ne 0) {
+  throw "Android SDK component installation failed with exit code $LASTEXITCODE"
+}
 
 Push-Location $FrontendRoot
 try {
@@ -190,8 +226,6 @@ try {
   }
 
   Write-Step "Applying build compatibility patches"
-  Ensure-StaticGradleSettings "android\settings.gradle"
-  Replace-InFile "android\build.gradle" "classpath\('org\.jetbrains\.kotlin:kotlin-gradle-plugin'\)" 'classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")'
   $manifestFile = "android\app\src\main\AndroidManifest.xml"
   Ensure-CleartextTraffic $manifestFile
   Ensure-ManifestPermission $manifestFile "INTERNET"
@@ -200,56 +234,39 @@ try {
   Ensure-ManifestPermission $manifestFile "WRITE_EXTERNAL_STORAGE"
   Ensure-ManifestPermission $manifestFile "READ_MEDIA_IMAGES"
   Ensure-ManifestPermission $manifestFile "READ_MEDIA_VISUAL_USER_SELECTED"
+  Ensure-Arm64AbiFilter "android\app\build.gradle"
 
   $cmakeFile = "node_modules\expo-modules-core\android\CMakeLists.txt"
   Replace-InFile $cmakeFile "(?m)^  -O2\r?\n" "  -O0`r`n  -g0`r`n"
   Ensure-CMakeSingleJob $cmakeFile
 
-  $drive = "$DriveLetter`:"
-  $drivePath = "$drive\"
-  $existingSubst = subst | Select-String -Pattern "^$([Regex]::Escape($drivePath))"
-  if ($existingSubst) {
-    subst $drive /D
+  if ($CleanNative) {
+    Write-Step "Cleaning native CMake cache"
+    Remove-Item -LiteralPath "node_modules\expo-modules-core\android\.cxx" -Recurse -Force -ErrorAction SilentlyContinue
+    Remove-Item -LiteralPath "android\app\.cxx" -Recurse -Force -ErrorAction SilentlyContinue
   }
+  Remove-Item -LiteralPath "android\app\build\outputs\apk\release\app-release.apk" -Force -ErrorAction SilentlyContinue
 
-  Write-Step "Mapping short build path $drivePath"
-  subst $drive $FrontendRoot
-
+  Write-Step "Building release APK"
+  Push-Location "android"
   try {
-    if ($CleanNative) {
-      Write-Step "Cleaning native CMake cache"
-      Remove-Item -LiteralPath "$drivePath\node_modules\expo-modules-core\android\.cxx" -Recurse -Force -ErrorAction SilentlyContinue
-      Remove-Item -LiteralPath "$drivePath\android\app\.cxx" -Recurse -Force -ErrorAction SilentlyContinue
-    }
-    Remove-Item -LiteralPath "$drivePath\android\app\build\outputs\apk\release\app-release.apk" -Force -ErrorAction SilentlyContinue
-
-    Write-Step "Building release APK"
-    Push-Location "$drivePath\android"
-    try {
-      .\gradlew.bat --no-daemon `
-        "-Dorg.gradle.jvmargs=-Xmx768m -XX:MaxMetaspaceSize=384m -Xss1m -XX:TieredStopAtLevel=1 -XX:ReservedCodeCacheSize=96m -XX:+UseSerialGC" `
-        "-Dkotlin.compiler.execution.strategy=in-process" `
-        "-Dkotlin.daemon.jvm.options=-Xmx256m" `
-        "-Dorg.gradle.parallel=false" `
-        "-Dorg.gradle.workers.max=1" `
-        "-Pandroid.compileSdkVersion=34" `
-        "-Pandroid.buildToolsVersion=34.0.0" `
-        "-PreactNativeArchitectures=arm64-v8a" `
-        -x lintVitalAnalyzeRelease `
-        -x lintVitalReportRelease `
-        -x lintVitalRelease `
-        assembleRelease
-      if ($LASTEXITCODE -ne 0) {
-        throw "Gradle build failed with exit code $LASTEXITCODE"
-      }
-    }
-    finally {
-      Pop-Location
+    .\gradlew.bat --no-daemon `
+      "-Dorg.gradle.jvmargs=-Xmx1536m -XX:MaxMetaspaceSize=512m -Xss1m -XX:TieredStopAtLevel=1 -XX:ReservedCodeCacheSize=128m -XX:+UseSerialGC" `
+      "-Pkotlin.compiler.execution.strategy=in-process" `
+      "-Pkotlin.incremental=false" `
+      "-Dorg.gradle.parallel=false" `
+      "-Dorg.gradle.workers.max=1" `
+      "-PreactNativeArchitectures=arm64-v8a" `
+      -x lintVitalAnalyzeRelease `
+      -x lintVitalReportRelease `
+      -x lintVitalRelease `
+      assembleRelease
+    if ($LASTEXITCODE -ne 0) {
+      throw "Gradle build failed with exit code $LASTEXITCODE"
     }
   }
   finally {
-    Write-Step "Removing short build path $drivePath"
-    subst $drive /D
+    Pop-Location
   }
 
   $apk = Join-Path $FrontendRoot "android\app\build\outputs\apk\release\app-release.apk"
@@ -261,7 +278,7 @@ try {
   Copy-Item -LiteralPath $apk -Destination $OutputApk -Force
 
   Write-Step "Verifying APK signature"
-  & "$AndroidSdkRoot\build-tools\35.0.0\apksigner.bat" verify --print-certs $OutputApk
+  & "$AndroidSdkRoot\build-tools\36.0.0\apksigner.bat" verify --print-certs $OutputApk
 
   Write-Host ""
   Write-Host "APK release created:" -ForegroundColor Green

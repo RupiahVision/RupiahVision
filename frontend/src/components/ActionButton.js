@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     borderColor: colors.primaryDark,
   },
   secondary: {
-    backgroundColor: "#fffdf8",
+    backgroundColor: colors.surface,
     borderColor: colors.primaryDark,
   },
   disabled: {
@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   },
   label: {
     color: "#ffffff",
+    fontFamily: "Roboto",
     fontWeight: "800",
     fontSize: 19,
   },
