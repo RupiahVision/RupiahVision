@@ -48,7 +48,10 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
     borderRadius: 12,
     backgroundColor: colors.surface,
-    padding: 14,
+    paddingTop: 14,
+    paddingHorizontal: 14,
+    paddingBottom: 24,
+    marginBottom: 24,
     gap: 14,
   },
   heading: {
@@ -64,11 +67,14 @@ const styles = StyleSheet.create({
   },
   list: {
     gap: 9,
+    paddingBottom: 8,
   },
   row: {
     alignItems: "center",
     flexDirection: "row",
     gap: 10,
+    minHeight: 28,
+    paddingVertical: 2,
   },
   label: {
     color: colors.ink,
@@ -76,6 +82,7 @@ const styles = StyleSheet.create({
     width: 116,
     fontWeight: "600",
     fontSize: 15,
+    lineHeight: 20,
   },
   percent: {
     width: 38,
@@ -83,6 +90,7 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
     fontWeight: "700",
     fontSize: 15,
+    lineHeight: 20,
     textAlign: "right",
   },
   topPercent: {

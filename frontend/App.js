@@ -205,7 +205,10 @@ export default function App() {
       <StatusBar style="dark" />
       <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
         <View style={styles.header}>
-          <Text style={styles.title}>RupiahVision</Text>
+          <Image
+            source={require("./assets/logo-rupiahvision-horizontal.png")}
+            style={styles.headerLogo}
+          />
           <Text style={styles.subtitle}>
             AI-Based Indonesian Banknote Recognition for Museum Experience
           </Text>
@@ -270,25 +273,23 @@ const styles = StyleSheet.create({
   },
   container: {
     paddingHorizontal: 18,
-    paddingTop: 24,
-    paddingBottom: 28,
+    paddingTop: 0,
+    paddingBottom: 88,
     gap: 14,
   },
   header: {
     alignItems: "center",
-    paddingTop: 12,
-    paddingBottom: 4,
+    paddingTop: 56,
+    paddingBottom: 0,
   },
-  title: {
-    color: colors.primaryDark,
-    fontFamily: "Roboto",
-    fontSize: 42,
-    fontWeight: "800",
-    lineHeight: 48,
-    textAlign: "center",
+  headerLogo: {
+    width: "90%",
+    maxWidth: 356,
+    height: 84,
+    resizeMode: "contain",
   },
   subtitle: {
-    marginTop: 2,
+    marginTop: 8,
     color: colors.muted,
     fontFamily: "Roboto",
     fontSize: 17,
