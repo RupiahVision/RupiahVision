@@ -14,6 +14,7 @@ import {
 } from "react-native";
 
 import { ActionButton } from "./src/components/ActionButton";
+import { BanknoteInsightCard } from "./src/components/BanknoteInsightCard";
 import { PredictionList } from "./src/components/PredictionList";
 import { colors } from "./src/theme/colors";
 import { formatPredictionLabel } from "./src/utils/labels";
@@ -259,6 +260,7 @@ export default function App() {
           <>
             <ResultMetrics result={result} />
             <PredictionList predictions={result.predictions} />
+            <BanknoteInsightCard label={result.label} />
           </>
         )}
       </ScrollView>
