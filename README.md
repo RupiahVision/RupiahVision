@@ -120,18 +120,27 @@ Backend membaca model tersebut lewat `backend/app/ml/classifier.py`. Response te
 
 ## Struktur
 
-```text
+```bash
 RupiahVision/
-  backend/
-    app/
-      main.py
-      schemas.py
-      ml/classifier.py
-    requirements.txt
-  frontend/
-    App.js
-    package.json
-    src/
-      components/
-      theme/
+├── backend/              
+│   ├── app/ 
+│   ├── models/
+│   └── requirements.txt                   
+├── frontend/                       
+│   ├── assets/ 
+│   ├── rilis/v1.0/ 
+│   ├── scripts/ 
+│   ├── src/ 
+│   ├── App.js                        
+│   ├── app.json
+│   ├── babel.config.js                        
+│   ├── eas.json
+│   ├── package-lock.json                
+│   └── package.json
+├── ml/              
+│   ├── model/
+│   └── notebook          
+├── .env.example                          
+├── .gitignore                 
+└── README.md                       
 ```
