@@ -122,25 +122,48 @@ Backend membaca model tersebut lewat `backend/app/ml/classifier.py`. Response te
 
 ```bash
 RupiahVision/
-├── backend/              
-│   ├── app/ 
+├── backend/
+│   ├── app/
+│   │   ├── ml/
+│   │   │   └── classifier.py
+│   │   ├── main.py
+│   │   └── schemas.py
 │   ├── models/
-│   └── requirements.txt                   
-├── frontend/                       
-│   ├── assets/ 
-│   ├── rilis/v1.0/ 
-│   ├── scripts/ 
-│   ├── src/ 
-│   ├── App.js                        
+│   │   └── rupiahvision_mobilenet2_float32.tflite
+│   └── requirements.txt
+├── frontend/
+│   ├── assets/
+│   │   ├── adaptive-icon.png
+│   │   ├── icon.png
+│   │   └── logo-rupiahvision-horizontal.png
+│   ├── rilis/
+│   │   └── v1.0/
+│   │       ├── app-release.aab
+│   │       └── app-release.apk
+│   ├── scripts/
+│   │   └── build-release-apk.ps1
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── ActionButton.js
+│   │   │   ├── BanknoteInsightCard.js
+│   │   │   └── PredictionList.js
+│   │   ├── data/
+│   │   │   └── banknoteDetails.js
+│   │   ├── theme/
+│   │   │   └── colors.js
+│   │   └── utils/
+│   │       └── labels.js
+│   ├── App.js
 │   ├── app.json
-│   ├── babel.config.js                        
+│   ├── babel.config.js
 │   ├── eas.json
-│   ├── package-lock.json                
+│   ├── package-lock.json
 │   └── package.json
-├── ml/              
+├── ml/
 │   ├── model/
-│   └── notebook          
-├── .env.example                          
-├── .gitignore                 
-└── README.md                       
+│   └── notebook/
+│       ├── RupiahVision.ipynb
+│       └── RV_Dataset_Validation.ipynb
+├── .gitignore
+└── README.md
 ```

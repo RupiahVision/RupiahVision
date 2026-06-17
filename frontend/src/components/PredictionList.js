@@ -44,14 +44,7 @@ export function PredictionList({ predictions = [] }) {
 
 const styles = StyleSheet.create({
   card: {
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 12,
     backgroundColor: colors.surface,
-    paddingTop: 14,
-    paddingHorizontal: 14,
-    paddingBottom: 24,
-    marginBottom: 0,
     gap: 14,
   },
   heading: {
@@ -63,7 +56,7 @@ const styles = StyleSheet.create({
     color: colors.ink,
     fontFamily: "Roboto",
     fontSize: 18,
-    fontWeight: "800",
+    fontWeight: "700",
   },
   list: {
     gap: 9,
@@ -94,12 +87,12 @@ const styles = StyleSheet.create({
     textAlign: "right",
   },
   topPercent: {
-    color: colors.primary,
-    fontWeight: "900",
+    color: colors.primaryDark,
+    fontWeight: "700",
   },
   topLabel: {
     color: colors.primaryDark,
-    fontWeight: "900",
+    fontWeight: "700",
   },
   track: {
     flex: 1,
@@ -111,6 +104,6 @@ const styles = StyleSheet.create({
   fill: {
     height: "100%",
     borderRadius: 999,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.primaryDark,
   },
 });

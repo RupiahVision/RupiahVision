@@ -6,6 +6,8 @@ import {
   ActivityIndicator,
   Alert,
   Image,
+  Linking,
+  Pressable,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -67,24 +69,21 @@ function ResultMetrics({ result }) {
 
   return (
     <View style={styles.resultCard}>
-      <Text style={styles.resultTitle}>Informasi Hasil</Text>
+      <View style={styles.resultHeading}>
+        <Ionicons name="document-text-outline" size={22} color={colors.primaryDark} />
+        <Text style={styles.resultTitle}>Informasi Hasil</Text>
+      </View>
       <MetricRow
-        icon={<Text style={styles.rupiahIconText}>Rp</Text>}
-        iconStyle={styles.rupiahIcon}
         label="Nominal"
         value={nominal}
         valueStyle={styles.nominalValue}
       />
       <MetricRow
-        icon={<Ionicons name="shield-checkmark" size={27} color={colors.primary} />}
-        iconStyle={styles.lineIcon}
         label="Confidence"
         value={confidence}
         valueStyle={styles.confidenceValue}
       />
       <MetricRow
-        icon={<Ionicons name="business" size={27} color={colors.primary} />}
-        iconStyle={styles.lineIcon}
         label="Status"
         value={status}
         valueStyle={styles.statusValue}
@@ -97,7 +96,7 @@ function ResultMetrics({ result }) {
 function MetricRow({ icon, iconStyle, label, value, valueStyle, withDivider = true }) {
   return (
     <View style={[styles.metricRow, withDivider && styles.metricDivider]}>
-      <View style={[styles.metricIcon, iconStyle]}>{icon}</View>
+      {icon && <View style={[styles.metricIcon, iconStyle]}>{icon}</View>}
       <Text style={styles.metricLabel}>{label}</Text>
       <Text style={[styles.metricValue, valueStyle]}>{value}</Text>
     </View>
@@ -109,6 +108,7 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [activeTab, setActiveTab] = useState(0);
 
   async function pickImage(source) {
     setError("");
@@ -193,6 +193,7 @@ export default function App() {
       }
 
       setResult(payload);
+      setActiveTab(0);
     } catch (err) {
       setError(getUploadErrorMessage(err));
     } finally {
@@ -229,14 +230,14 @@ export default function App() {
         <View style={styles.actions}>
           <ActionButton
             disabled={loading}
-            icon="camera"
-            label="Kamera"
+            icon={image ? "camera-reverse-outline" : "camera"}
+            label={image ? "Foto Ulang" : "Kamera"}
             onPress={() => pickImage("camera")}
           />
           <ActionButton
             disabled={loading}
             icon="images"
-            label="Galeri"
+            label={image ? "Ganti Gambar" : "Galeri"}
             onPress={() => pickImage("library")}
             variant="secondary"
           />
@@ -257,12 +258,34 @@ export default function App() {
         )}
 
         {result && (
-          <>
-            <ResultMetrics result={result} />
-            <PredictionList predictions={result.predictions} />
-            <BanknoteInsightCard label={result.label} />
-          </>
+          <View style={styles.tabContainer}>
+            <View style={styles.tabBar}>
+              {["Hasil", "Prediksi", "Histori"].map((tab, i) => (
+                <Pressable
+                  key={tab}
+                  onPress={() => setActiveTab(i)}
+                  style={[styles.tabItem, activeTab === i && styles.tabItemActive]}
+                >
+                  <Text style={[styles.tabLabel, activeTab === i && styles.tabLabelActive]}>
+                    {tab}
+                  </Text>
+                </Pressable>
+              ))}
+            </View>
+            <View style={styles.tabContent}>
+              {activeTab === 0 && <ResultMetrics result={result} />}
+              {activeTab === 1 && <PredictionList predictions={result.predictions} />}
+              {activeTab === 2 && <BanknoteInsightCard label={result.label} />}
+            </View>
+          </View>
         )}
+
+        <View style={styles.copyrightRow}>
+          <Text style={styles.copyright}>© Copyright RupiahVision - 2026  •  </Text>
+          <Pressable onPress={() => Linking.openURL("https://github.com/RupiahVision/")}>
+            <Text style={styles.copyrightLink}>GitHub</Text>
+          </Pressable>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -349,27 +372,78 @@ const styles = StyleSheet.create({
     borderColor: "#fecaca",
     backgroundColor: "#fff1f2",
   },
+  copyrightRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 8,
+  },
+  copyright: {
+    color: colors.muted,
+    fontFamily: "Roboto",
+    fontSize: 12,
+  },
+  copyrightLink: {
+    color: colors.primary,
+    fontFamily: "Roboto",
+    fontSize: 12,
+    fontWeight: "700",
+  },
   errorText: {
     flex: 1,
     color: colors.danger,
     fontFamily: "Roboto",
     fontWeight: "700",
   },
-  resultCard: {
+  tabContainer: {
     borderWidth: 1,
     borderColor: colors.border,
     borderRadius: 12,
     backgroundColor: colors.surface,
-    paddingHorizontal: 14,
-    paddingTop: 14,
-    paddingBottom: 8,
+    overflow: "hidden",
+  },
+  tabBar: {
+    flexDirection: "row",
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border,
+  },
+  tabItem: {
+    flex: 1,
+    paddingVertical: 13,
+    alignItems: "center",
+    borderBottomWidth: 2,
+    borderBottomColor: "transparent",
+  },
+  tabItemActive: {
+    borderBottomColor: colors.primary,
+  },
+  tabLabel: {
+    color: colors.muted,
+    fontFamily: "Roboto",
+    fontWeight: "600",
+    fontSize: 14,
+  },
+  tabLabelActive: {
+    color: colors.primary,
+    fontWeight: "700",
+  },
+  tabContent: {
+    padding: 14,
+  },
+  resultCard: {
+    gap: 0,
+  },
+  resultHeading: {
+    alignItems: "center",
+    flexDirection: "row",
+    gap: 8,
+    marginBottom: 8,
   },
   resultTitle: {
     color: colors.ink,
     fontFamily: "Roboto",
     fontSize: 18,
-    fontWeight: "900",
-    marginBottom: 8,
+    fontWeight: "700",
   },
   metricRow: {
     minHeight: 58,
@@ -389,13 +463,13 @@ const styles = StyleSheet.create({
   },
   rupiahIcon: {
     borderRadius: 999,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.primaryDark,
   },
   rupiahIconText: {
     color: "#ffffff",
     fontFamily: "Roboto",
     fontSize: 17,
-    fontWeight: "900",
+    fontWeight: "700",
   },
   lineIcon: {
     backgroundColor: "transparent",
@@ -411,7 +485,7 @@ const styles = StyleSheet.create({
     flex: 1,
     color: colors.primaryDark,
     fontFamily: "Roboto",
-    fontWeight: "900",
+    fontWeight: "700",
     textAlign: "right",
   },
   nominalValue: {

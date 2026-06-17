@@ -1,17 +1,11 @@
 import { Ionicons } from "@expo/vector-icons";
-import { useEffect, useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import { colors } from "../theme/colors";
 import { getBanknoteDetail } from "../data/banknoteDetails";
 
 export function BanknoteInsightCard({ label }) {
   const detail = getBanknoteDetail(label);
-  const [expanded, setExpanded] = useState(false);
-
-  useEffect(() => {
-    setExpanded(false);
-  }, [label]);
 
   if (!detail) {
     return null;
@@ -35,56 +29,34 @@ export function BanknoteInsightCard({ label }) {
         ))}
       </View>
 
-      {expanded && (
-        <>
-          <View style={styles.sectionList}>
-            {detail.sections.map((section) => (
-              <View key={section.title} style={styles.sectionBlock}>
-                <Text style={styles.sectionTitle}>{section.title}</Text>
-                <Text style={styles.sectionBody}>{section.body}</Text>
-              </View>
-            ))}
+      <View style={styles.sectionList}>
+        {detail.sections.map((section) => (
+          <View key={section.title} style={styles.sectionBlock}>
+            <Text style={styles.sectionTitle}>{section.title}</Text>
+            <Text style={styles.sectionBody}>{section.body}</Text>
           </View>
+        ))}
+      </View>
 
-          <View style={styles.table}>
-            {detail.rows.map((item, index) => (
-              <View
-                key={item.label}
-                style={[styles.tableRow, index % 2 === 1 && styles.tableRowAlt]}
-              >
-                <Text style={styles.tableLabel}>{item.label}</Text>
-                <Text style={styles.tableValue}>{item.value}</Text>
-              </View>
-            ))}
+      <View style={styles.table}>
+        {detail.rows.map((item, index) => (
+          <View
+            key={item.label}
+            style={[styles.tableRow, index % 2 === 1 && styles.tableRowAlt]}
+          >
+            <Text style={styles.tableLabel}>{item.label}</Text>
+            <Text style={styles.tableValue}>{item.value}</Text>
           </View>
-        </>
-      )}
-
-      <Pressable
-        accessibilityRole="button"
-        onPress={() => setExpanded((current) => !current)}
-        style={({ pressed }) => [styles.toggleButton, pressed && styles.togglePressed]}
-      >
-        <Text style={styles.toggleText}>{expanded ? "Sembunyikan" : "Selengkapnya"}</Text>
-        <Ionicons
-          name={expanded ? "chevron-up" : "chevron-down"}
-          size={18}
-          color={colors.primaryDark}
-        />
-      </Pressable>
+        ))}
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   card: {
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 12,
     backgroundColor: colors.surface,
-    padding: 14,
     gap: 14,
-    marginBottom: 24,
   },
   heading: {
     alignItems: "center",
@@ -95,7 +67,7 @@ const styles = StyleSheet.create({
     color: colors.ink,
     fontFamily: "Roboto",
     fontSize: 18,
-    fontWeight: "900",
+    fontWeight: "700",
   },
   summaryBox: {
     borderRadius: 10,
@@ -118,7 +90,7 @@ const styles = StyleSheet.create({
     color: colors.ink,
     fontFamily: "Roboto",
     fontSize: 14,
-    fontWeight: "800",
+    fontWeight: "700",
   },
   summaryValue: {
     flex: 1,
@@ -156,7 +128,7 @@ const styles = StyleSheet.create({
     color: colors.ink,
     fontFamily: "Roboto",
     fontSize: 14,
-    fontWeight: "800",
+    fontWeight: "700",
     lineHeight: 20,
   },
   tableValue: {
@@ -183,32 +155,12 @@ const styles = StyleSheet.create({
     color: colors.ink,
     fontFamily: "Roboto",
     fontSize: 15,
-    fontWeight: "900",
+    fontWeight: "700",
   },
   sectionBody: {
     color: colors.muted,
     fontFamily: "Roboto",
     fontSize: 14,
     lineHeight: 22,
-  },
-  toggleButton: {
-    minHeight: 44,
-    borderRadius: 10,
-    borderWidth: 1.5,
-    borderColor: colors.primaryDark,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 8,
-    backgroundColor: colors.surface,
-  },
-  togglePressed: {
-    opacity: 0.9,
-  },
-  toggleText: {
-    color: colors.primaryDark,
-    fontFamily: "Roboto",
-    fontSize: 15,
-    fontWeight: "800",
   },
 });

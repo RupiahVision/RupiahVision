@@ -8,6 +8,7 @@
     "newArchEnabled": false,
     "icon": "./assets/icon.png",
     "splash": {
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,11 +18,16 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.github.rupiahvision",
+      "icon": "./assets/icon.png",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff"
+      },
       "usesCleartextTraffic": true,
       "permissions": [
         "CAMERA",
