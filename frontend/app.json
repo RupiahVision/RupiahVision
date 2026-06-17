@@ -43,7 +43,8 @@
     },
     "plugins": [
       "expo-asset",
-      "expo-font"
+      "expo-font",
+      "./plugins/with-fmt-xcode-fix"
     ],
     "extra": {
       "eas": {
