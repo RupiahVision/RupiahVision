@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/RupiahVision/RupiahVision/main/frontend/assets/logo-rupiahvision-horizontal.png" alt="RupiahVision Logo" width="480"/>
+</p>
+
 # Panduan Penggunaan Aplikasi RupiahVision
 
 > **Versi Dokumen:** 1.1 | **Platform:** Android | **Emisi:** Rupiah 2016

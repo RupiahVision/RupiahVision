@@ -1,5 +1,9 @@
 # RupiahVision
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/RupiahVision/RupiahVision/main/frontend/assets/logo-rupiahvision-horizontal.png" alt="RupiahVision Logo" width="480"/>
+</p>
+
 ![Version](https://img.shields.io/badge/versi-v1.1-blue) ![Platform](https://img.shields.io/badge/platform-Android-green) ![Backend](https://img.shields.io/badge/backend-FastAPI-009688) ![Model](https://img.shields.io/badge/model-MobileNetV2-orange)
 
 RupiahVision adalah aplikasi frontend dan backend untuk mendeteksi nominal mata uang kertas Rupiah dari gambar. Pengguna dapat mengambil atau memilih foto uang kertas, lalu aplikasi mengirim gambar tersebut ke backend machine learning untuk mendapatkan prediksi nominal.
